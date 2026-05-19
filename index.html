@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LFGC 키즈 바이블 캠프 2026 · 체인지 업</title>
+<meta name="description" content="LFGC Kids Bible Camp 2026 — Change Up · 21–24 July, Oakwood Youth Challenge, Wokingham. Year 1–6 어린이를 위한 4일 여정." />
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+/* ── tokens ── */
+:root {
+  --surface:#fff9ed;--surface-dim:#e2dabf;--surface-bright:#fff9ed;
+  --surface-container-lowest:#ffffff;--surface-container-low:#fcf3d8;
+  --surface-container:#f7eed2;--surface-container-high:#f1e8cd;
+  --surface-container-highest:#ebe2c8;--surface-variant:#ebe2c8;
+  --background:#fff9ed;--inverse-surface:#35301e;--inverse-on-surface:#faf0d5;
+  --surface-tint:#904d00;--on-surface:#1f1c0b;--on-surface-variant:#544437;
+  --on-background:#1f1c0b;--primary:#904d00;--on-primary:#ffffff;
+  --primary-container:#d27d2d;--on-primary-container:#452200;
+  --inverse-primary:#ffb77d;--primary-fixed:#ffdcc3;--primary-fixed-dim:#ffb77d;
+  --on-primary-fixed:#2f1500;--on-primary-fixed-variant:#6e3900;
+  --secondary:#934b19;--on-secondary:#ffffff;--secondary-container:#ffa26a;
+  --on-secondary-container:#783603;--secondary-fixed:#ffdbc9;--secondary-fixed-dim:#ffb68c;
+  --on-secondary-fixed:#321200;--on-secondary-fixed-variant:#753401;
+  --tertiary:#765a05;--on-tertiary:#ffffff;--tertiary-container:#ae8e3a;
+  --on-tertiary-container:#372900;--tertiary-fixed:#ffdf96;--tertiary-fixed-dim:#e7c268;
+  --on-tertiary-fixed:#251a00;--on-tertiary-fixed-variant:#5a4400;
+  --error:#ba1a1a;--on-error:#ffffff;--error-container:#ffdad6;--on-error-container:#93000a;
+  --outline:#877366;--outline-variant:#dac2b2;
+  --fg-1:var(--on-surface);--fg-2:var(--on-surface-variant);--fg-3:var(--outline);
+  --bg-page:var(--surface);--bg-section:var(--surface-container-low);
+  --bg-card:rgba(255,249,237,0.7);--bg-card-solid:var(--surface-container);
+  --accent:var(--primary);--accent-hover:var(--primary-container);--link:var(--primary);
+  --glow-purple:rgba(144,77,0,0.15);--glow-purple-strong:rgba(144,77,0,0.30);
+  --glass-bg:rgba(255,249,237,0.65);--glass-border:rgba(255,220,195,0.5);--glass-blur:32px;
+  --font-sans:'Montserrat',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  --font-display:var(--font-sans);--font-body:var(--font-sans);
+  --font-icon:'Material Symbols Outlined';
+  --display-xl-size:84px;--display-xl-line:92px;--display-xl-weight:800;--display-xl-tracking:-0.02em;
+  --headline-lg-size:48px;--headline-lg-line:56px;--headline-lg-weight:700;--headline-lg-tracking:0.05em;
+  --headline-md-size:32px;--headline-md-line:40px;--headline-md-weight:600;
+  --body-lg-size:18px;--body-lg-line:28px;--body-lg-weight:400;
+  --body-md-size:16px;--body-md-line:24px;--body-md-weight:400;
+  --label-sm-size:12px;--label-sm-line:16px;--label-sm-weight:700;--label-sm-tracking:0.1em;
+  --space-base:8px;--space-1:8px;--space-2:16px;--space-3:24px;--space-4:32px;
+  --space-6:48px;--space-8:64px;--space-12:96px;--space-15:120px;
+  --gutter:24px;--margin-page:64px;--section-gap:120px;--container-max:1280px;
+  --radius-sm:4px;--radius:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;
+  --shadow-sm:0 4px 12px rgba(144,77,0,0.08);--shadow:0 10px 40px rgba(144,77,0,0.15);
+  --shadow-lg:0 20px 60px rgba(144,77,0,0.20);--shadow-glow:0 0 80px rgba(144,77,0,0.30);
+  --ease:cubic-bezier(.22,.61,.36,1);--ease-emph:cubic-bezier(.16,1,.3,1);
+  --dur-fast:150ms;--dur:300ms;--dur-slow:700ms;
+}
+
+html,body{background:var(--bg-page);color:var(--fg-1);font-family:var(--font-body);
+  font-size:var(--body-md-size);line-height:var(--body-md-line);font-weight:var(--body-md-weight);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin:0;padding:0;}
+*{box-sizing:border-box;}
+body{overflow-x:hidden;}
+::selection{background:var(--primary-fixed);color:var(--on-primary-fixed);}
+
+h1,.display-xl{font-family:var(--font-display);font-size:var(--display-xl-size);
+  line-height:var(--display-xl-line);font-weight:var(--display-xl-weight);
+  letter-spacing:var(--display-xl-tracking);color:var(--primary);margin:0;}
+h2,.headline-lg{font-family:var(--font-display);font-size:var(--headline-lg-size);
+  line-height:var(--headline-lg-line);font-weight:var(--headline-lg-weight);
+  letter-spacing:var(--headline-lg-tracking);color:var(--fg-1);margin:0;}
+h3,.headline-md{font-family:var(--font-display);font-size:var(--headline-md-size);
+  line-height:var(--headline-md-line);font-weight:var(--headline-md-weight);color:var(--fg-1);margin:0;}
+p,.body-lg{font-size:var(--body-lg-size);line-height:var(--body-lg-line);
+  font-weight:var(--body-lg-weight);color:var(--fg-2);margin:0;}
+.body-md{font-size:var(--body-md-size);line-height:var(--body-md-line);
+  font-weight:var(--body-md-weight);color:var(--fg-2);}
+.label-sm,.eyebrow{font-size:var(--label-sm-size);line-height:var(--label-sm-line);
+  font-weight:var(--label-sm-weight);letter-spacing:var(--label-sm-tracking);
+  text-transform:uppercase;color:var(--primary);}
+a{color:var(--link);text-decoration:none;transition:opacity var(--dur) var(--ease),color var(--dur) var(--ease);}
+a:hover{opacity:.8;}
+
+.glass-card{background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));
+  -webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow);}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:20px 48px;
+  border-radius:var(--radius-full);font-size:var(--label-sm-size);font-weight:var(--label-sm-weight);
+  letter-spacing:var(--label-sm-tracking);text-transform:uppercase;cursor:pointer;border:0;
+  transition:opacity var(--dur) var(--ease),transform var(--dur-fast) var(--ease),background var(--dur) var(--ease);}
+.btn:active{transform:scale(0.95);}
+.btn-primary{background:linear-gradient(90deg,var(--primary),var(--secondary));color:var(--on-primary);
+  box-shadow:0 12px 32px rgba(144,77,0,0.20);}
+.btn-primary:hover{opacity:.85;}
+.btn-glass{background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));
+  -webkit-backdrop-filter:blur(var(--glass-blur));color:var(--primary);
+  border:1px solid rgba(144,77,0,0.20);}
+.btn-glass:hover{background:#ffffff;}
+.btn-ghost{background:transparent;color:var(--primary);border:1px solid rgba(144,77,0,.25);}
+.btn-ghost:hover{background:var(--primary-fixed);}
+.btn .material-symbols-outlined{font-size:18px;}
+
+.icon,.material-symbols-outlined{font-family:var(--font-icon);font-weight:normal;font-style:normal;
+  font-size:24px;display:inline-block;line-height:1;letter-spacing:normal;text-transform:none;
+  white-space:nowrap;word-wrap:normal;direction:ltr;
+  font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+
+/* ── styles ── */
+.ko{font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',var(--font-sans);
+  font-weight:700;letter-spacing:-0.01em;}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(254,247,255,.78);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.55);box-shadow:0 10px 40px rgba(144,77,0,.10);}
+.nav__inner{max-width:var(--container-max);margin:0 auto;height:80px;padding:0 var(--margin-page);
+  display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.nav__brand{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav__mark{width:36px;height:36px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;
+  box-shadow:0 6px 20px rgba(144,77,0,.30);color:#fff;font-family:var(--font-display);
+  font-weight:800;font-size:14px;letter-spacing:0.04em;}
+.nav__wordmark{font-family:var(--font-display);font-weight:800;font-size:18px;
+  letter-spacing:0.22em;color:var(--primary);line-height:1;}
+.nav__wordmark small{display:block;font-family:'Noto Sans KR',var(--font-sans);font-weight:600;
+  font-size:11px;letter-spacing:0.04em;color:var(--on-surface-variant);margin-top:4px;}
+.nav__links{display:flex;gap:32px;align-items:center;}
+.nav__link{font-family:'Noto Sans KR',var(--font-sans);font-weight:700;font-size:13px;
+  letter-spacing:0.02em;color:var(--on-surface-variant);text-decoration:none;padding:6px 0;
+  transition:color var(--dur) var(--ease),opacity var(--dur) var(--ease);}
+.nav__link:hover{color:var(--primary);opacity:.85;}
+.nav__link.is-active{color:var(--primary);}
+.nav__cta{padding:12px 28px;}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;padding-top:120px;padding-bottom:80px;
+  display:flex;align-items:center;overflow:hidden;background:var(--surface);
+  transition:background var(--dur-slow) var(--ease);}
+.hero[data-bg="mist"]{background:var(--surface);}
+.hero[data-bg="bokeh"] .hero__bokeh{opacity:1;}
+.hero[data-bg="photo"]{background-image:
+  linear-gradient(180deg,rgba(31,25,38,.35) 0%,rgba(144,77,0,.45) 60%,rgba(254,247,255,.85) 100%),
+  url('./hero-cosmic-night.png');background-size:cover;background-position:center;}
+.hero[data-bg="photo"] .hero__bokeh{opacity:.25;}
+.hero__bokeh{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;
+  transition:opacity var(--dur-slow) var(--ease);}
+.hero__bokeh-a,.hero__bokeh-b,.hero__bokeh-c{position:absolute;border-radius:50%;filter:blur(90px);}
+.hero__bokeh-a{width:640px;height:640px;background:var(--primary-fixed-dim);top:-120px;left:-120px;opacity:.55;}
+.hero__bokeh-b{width:820px;height:820px;background:var(--secondary-fixed);bottom:-260px;right:-200px;opacity:.50;}
+.hero__bokeh-c{width:380px;height:380px;background:var(--primary-container);top:30%;left:38%;opacity:.25;}
+.hero__inner{position:relative;z-index:1;max-width:var(--container-max);margin:0 auto;
+  padding:0 var(--margin-page);width:100%;}
+.hero[data-comp="typographic"] .hero__inner{display:grid;grid-template-columns:1fr;
+  text-align:center;justify-items:center;}
+.hero[data-comp="typographic"] .hero__media{display:none;}
+.hero[data-comp="typographic"] .hero__copy{max-width:880px;}
+.hero[data-comp="photo-led"] .hero__inner{display:grid;grid-template-columns:1.05fr 0.95fr;
+  gap:64px;align-items:center;}
+.hero[data-comp="photo-led"] .hero__copy{text-align:left;}
+.hero[data-comp="photo-led"] .hero__display{font-size:132px;line-height:.92;}
+.hero[data-comp="photo-led"] .hero__verse{margin-left:0;margin-right:0;}
+.hero__kicker{display:inline-flex;align-items:center;gap:12px;padding:8px 18px;
+  background:rgba(255,255,255,.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.6);border-radius:var(--radius-full);margin-bottom:28px;}
+.hero__kicker-dot{width:6px;height:6px;border-radius:50%;background:var(--primary);
+  box-shadow:0 0 12px var(--primary);}
+.hero__kicker-text{font-size:11px;font-weight:700;letter-spacing:0.24em;
+  text-transform:uppercase;color:var(--primary);}
+.hero[data-bg="photo"] .hero__kicker{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.30);}
+.hero[data-bg="photo"] .hero__kicker-text{color:#fff;}
+.hero__display{font-family:var(--font-display);font-weight:800;font-size:168px;line-height:.88;
+  letter-spacing:-0.04em;color:var(--primary);margin:0 0 18px;text-transform:uppercase;}
+.hero[data-bg="photo"] .hero__display{color:#fff;text-shadow:0 8px 60px rgba(31,25,38,.45);}
+.hero__display-ko{font-family:'Noto Sans KR',var(--font-sans);font-weight:800;font-size:28px;
+  letter-spacing:0.08em;color:var(--secondary);margin:0 0 36px;}
+.hero[data-bg="photo"] .hero__display-ko{color:rgba(255,255,255,.85);}
+.hero__verse{max-width:620px;margin:0 auto 36px;font-family:'Noto Sans KR',var(--font-sans);
+  font-weight:400;font-size:17px;line-height:1.75;color:var(--on-surface);
+  padding:22px 28px;background:rgba(255,255,255,.45);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);border-left:3px solid var(--primary);
+  border-radius:var(--radius-md);text-align:left;}
+.hero__verse cite{display:block;margin-top:10px;font-style:normal;font-size:12px;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);}
+.hero[data-bg="photo"] .hero__verse{background:rgba(31,25,38,.40);color:rgba(255,255,255,.92);
+  border-left-color:var(--primary-fixed-dim);}
+.hero[data-bg="photo"] .hero__verse cite{color:var(--primary-fixed-dim);}
+.hero__meta{display:flex;gap:36px;flex-wrap:wrap;margin-bottom:36px;justify-content:center;}
+.hero[data-comp="photo-led"] .hero__meta{justify-content:flex-start;}
+.hero__meta-item{display:flex;align-items:center;gap:12px;}
+.hero__meta-icon{width:40px;height:40px;border-radius:50%;background:var(--primary-fixed);
+  color:var(--primary);display:grid;place-items:center;}
+.hero__meta-icon .material-symbols-outlined{font-size:20px;}
+.hero__meta-text{font-family:'Noto Sans KR',var(--font-sans);font-weight:600;font-size:14px;
+  line-height:1.3;color:var(--on-surface);}
+.hero__meta-text small{display:block;font-size:11px;font-weight:700;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--primary);margin-bottom:4px;}
+.hero[data-bg="photo"] .hero__meta-icon{background:rgba(255,255,255,.18);color:#fff;}
+.hero[data-bg="photo"] .hero__meta-text{color:#fff;}
+.hero[data-bg="photo"] .hero__meta-text small{color:var(--primary-fixed-dim);}
+.hero__ctas{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
+.hero[data-comp="photo-led"] .hero__ctas{justify-content:flex-start;}
+.hero__media{position:relative;}
+.hero__media-frame{position:relative;width:100%;aspect-ratio:4/5;border-radius:var(--radius-xl);
+  overflow:hidden;box-shadow:0 30px 80px rgba(144,77,0,.25);}
+.hero__media-tag{position:absolute;left:-28px;top:32px;padding:14px 22px;
+  background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.6);border-radius:var(--radius-md);
+  box-shadow:0 12px 30px rgba(144,77,0,.20);display:flex;align-items:center;gap:12px;}
+.hero__media-tag .material-symbols-outlined{color:var(--primary);font-size:22px;}
+.hero__media-tag-text{font-family:'Noto Sans KR',var(--font-sans);font-weight:700;font-size:13px;color:var(--on-surface);}
+.hero__media-tag-text small{display:block;font-size:10px;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--primary);margin-bottom:2px;}
+.hero__scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  color:var(--primary);animation:bounce 2.2s infinite;z-index:2;}
+.hero[data-bg="photo"] .hero__scroll{color:rgba(255,255,255,.85);}
+@keyframes bounce{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-12px)}}
+
+/* Sections */
+.section{padding-block:var(--section-gap);position:relative;}
+.section__inner{max-width:var(--container-max);margin:0 auto;padding:0 var(--margin-page);}
+.section__head{margin-bottom:72px;}
+.section__head--center{text-align:center;max-width:760px;margin-left:auto;margin-right:auto;}
+.section__kicker{display:inline-flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+.section__kicker-bar{width:28px;height:2px;background:var(--primary);display:inline-block;transform:translateY(-4px);}
+.section__kicker-text{font-size:12px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--primary);}
+.section__title-en{font-family:var(--font-display);font-weight:800;font-size:56px;line-height:1.05;
+  letter-spacing:-0.02em;color:var(--on-surface);margin:0 0 12px;}
+.section__title-ko{font-family:'Noto Sans KR',var(--font-sans);font-weight:700;font-size:22px;
+  letter-spacing:0.02em;color:var(--primary);}
+.section__lead{margin-top:24px;max-width:620px;font-family:'Noto Sans KR',var(--font-sans);
+  font-size:16px;line-height:1.75;color:var(--on-surface-variant);}
+.section__head--center .section__kicker{justify-content:center;}
+.section__head--center .section__lead{margin-left:auto;margin-right:auto;}
+
+/* About */
+.about__grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:80px;align-items:center;}
+.about__media{position:relative;}
+.about__media-glow{position:absolute;inset:-24px;
+  background:radial-gradient(circle at 30% 30%,rgba(144,77,0,.18),transparent 70%);
+  filter:blur(40px);border-radius:var(--radius-xl);}
+.about__media-frame{position:relative;aspect-ratio:4/5;border-radius:var(--radius-xl);
+  overflow:hidden;box-shadow:0 24px 60px rgba(144,77,0,.20);
+  background:var(--surface-container-highest);}
+.about__media-badge{position:absolute;right:-20px;bottom:28px;padding:18px 22px;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-radius:var(--radius-lg);box-shadow:0 14px 40px rgba(144,77,0,.20);
+  display:flex;align-items:center;gap:14px;}
+.about__media-badge-num{font-family:var(--font-display);font-weight:800;font-size:36px;
+  color:var(--primary);line-height:1;}
+.about__media-badge-text{font-family:'Noto Sans KR',var(--font-sans);font-size:12px;font-weight:700;
+  line-height:1.4;color:var(--on-surface-variant);}
+.about__media-badge-text small{display:block;font-size:10px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--primary);margin-bottom:2px;}
+.about__copy h2{margin-bottom:28px;}
+.about__copy p{font-family:'Noto Sans KR',var(--font-sans);font-size:16px;line-height:1.85;
+  color:var(--on-surface-variant);margin:0 0 20px;}
+.about__pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px;}
+.pillar{padding:24px;background:rgba(255,255,255,.6);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.5);
+  border-radius:var(--radius-lg);box-shadow:0 6px 24px rgba(144,77,0,.08);display:flex;gap:16px;}
+.pillar__icon{flex-shrink:0;width:44px;height:44px;border-radius:var(--radius-md);
+  background:linear-gradient(135deg,var(--primary-fixed),var(--secondary-fixed));
+  color:var(--primary);display:grid;place-items:center;}
+.pillar__icon .material-symbols-outlined{font-size:22px;}
+.pillar__title{font-family:'Noto Sans KR',var(--font-sans);font-weight:700;font-size:15px;
+  color:var(--on-surface);margin-bottom:6px;}
+.pillar__title small{display:block;font-family:var(--font-display);font-size:10px;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--primary);margin-bottom:4px;}
+.pillar__desc{font-family:'Noto Sans KR',var(--font-sans);font-size:13px;line-height:1.6;
+  color:var(--on-surface-variant);}
+
+/* Schedule */
+.schedule{background:var(--surface-container-low);position:relative;overflow:hidden;}
+.schedule::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;
+  background:var(--primary-fixed-dim);filter:blur(120px);opacity:.35;
+  top:-200px;right:-200px;pointer-events:none;}
+.schedule__tabs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;justify-content:center;}
+.schedule__tab{padding:16px 26px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.5);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--radius-lg);
+  cursor:pointer;transition:all var(--dur) var(--ease);font-family:var(--font-sans);
+  text-align:left;min-width:168px;}
+.schedule__tab:active{transform:scale(.97);}
+.schedule__tab.is-on{background:linear-gradient(135deg,var(--primary),var(--secondary));
+  border-color:transparent;box-shadow:0 12px 30px rgba(144,77,0,.30);}
+.schedule__tab-day{font-family:var(--font-display);font-size:11px;font-weight:800;
+  letter-spacing:0.22em;text-transform:uppercase;color:var(--primary);}
+.schedule__tab.is-on .schedule__tab-day{color:rgba(255,255,255,.7);}
+.schedule__tab-date{font-family:var(--font-display);font-size:26px;font-weight:800;
+  color:var(--on-surface);margin-top:6px;}
+.schedule__tab.is-on .schedule__tab-date{color:#fff;}
+.schedule__tab-label{font-family:'Noto Sans KR',var(--font-sans);font-size:13px;font-weight:600;
+  color:var(--on-surface-variant);margin-top:4px;}
+.schedule__tab.is-on .schedule__tab-label{color:rgba(255,255,255,.85);}
+.schedule__list{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:14px;
+  position:relative;z-index:1;}
+.schedule__row{display:flex;align-items:center;gap:28px;padding:22px 28px;
+  background:rgba(255,255,255,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.5);border-radius:var(--radius-lg);
+  box-shadow:0 8px 30px rgba(144,77,0,.08);
+  transition:background var(--dur) var(--ease),transform var(--dur) var(--ease);}
+.schedule__row:hover{background:rgba(255,255,255,.92);}
+.schedule__row.is-pinned{border-left:3px solid var(--primary);}
+.schedule__time{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--primary);
+  width:92px;padding-right:24px;border-right:1px solid rgba(144,77,0,.20);}
+.schedule__body{flex:1;}
+.schedule__title{font-family:'Noto Sans KR',var(--font-sans);font-weight:700;font-size:17px;
+  color:var(--on-surface);margin-bottom:4px;}
+.schedule__title small{display:inline-block;font-family:var(--font-display);font-size:10px;
+  font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);
+  margin-right:10px;padding:2px 8px;background:var(--primary-fixed);border-radius:var(--radius-sm);}
+.schedule__desc{font-family:'Noto Sans KR',var(--font-sans);font-size:13px;line-height:1.55;
+  color:var(--on-surface-variant);}
+.schedule__icon{color:rgba(144,77,0,.4);}
+.schedule__row.is-pinned .schedule__icon{color:var(--primary);}
+
+/* Video */
+.video{position:relative;min-height:620px;padding:0;overflow:hidden;}
+.video__bg{position:absolute;inset:0;}
+.video__bg img{width:100%;height:100%;object-fit:cover;}
+.video__overlay{position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 30%,rgba(144,77,0,.45),transparent 60%),
+  linear-gradient(180deg,rgba(31,25,38,.55),rgba(31,25,38,.85));}
+.video__inner{position:relative;z-index:1;min-height:620px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:96px var(--margin-page);text-align:center;}
+.video__bilingual{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:36px;}
+.video__en{font-family:var(--font-display);font-weight:800;font-size:84px;line-height:1;
+  letter-spacing:0.22em;color:#fff;text-transform:uppercase;}
+.video__ko{font-family:'Noto Sans KR',var(--font-sans);font-weight:600;font-size:22px;
+  color:rgba(255,255,255,.85);}
+.video__lead{max-width:580px;font-family:'Noto Sans KR',var(--font-sans);font-size:16px;
+  line-height:1.75;color:rgba(255,255,255,.78);margin:0 0 40px;}
+.video__player{position:relative;width:100%;max-width:720px;aspect-ratio:16/9;
+  border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);
+  background:#1a0a2e;cursor:pointer;border:1px solid rgba(255,255,255,.18);}
+.video__player::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5));pointer-events:none;}
+.video__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;
+  width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.94);
+  display:grid;place-items:center;box-shadow:0 20px 60px rgba(0,0,0,.4);
+  transition:transform var(--dur) var(--ease);}
+.video__player:hover .video__play{transform:translate(-50%,-50%) scale(1.06);}
+.video__play .material-symbols-outlined{font-size:44px;color:var(--primary);
+  font-variation-settings:'FILL' 1;}
+.video__caption{position:absolute;left:28px;bottom:22px;z-index:2;color:#fff;}
+.video__caption-title{font-family:'Noto Sans KR',var(--font-sans);font-weight:700;font-size:16px;}
+.video__caption-meta{font-family:var(--font-display);font-size:11px;font-weight:700;
+  letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:4px;}
+
+/* Gallery */
+.gallery{background:var(--surface);}
+.gallery__head{max-width:var(--container-max);margin:0 auto 48px;padding:0 var(--margin-page);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;}
+.gallery__rail{display:flex;gap:22px;overflow-x:auto;padding:16px var(--margin-page) 36px;
+  scrollbar-width:none;}
+.gallery__rail::-webkit-scrollbar{display:none;}
+.gallery__item{flex-shrink:0;width:320px;height:460px;border-radius:var(--radius-xl);
+  overflow:hidden;position:relative;box-shadow:0 16px 40px rgba(144,77,0,.15);
+  background:var(--surface-container);}
+.gallery__item-overlay{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(31,25,38,.65),transparent 50%);}
+.gallery__item-cap{position:absolute;left:24px;bottom:22px;right:24px;z-index:2;color:#fff;}
+.gallery__item-cap-title{font-family:'Noto Sans KR',var(--font-sans);font-weight:700;font-size:17px;}
+.gallery__item-cap-meta{font-family:var(--font-display);font-size:10px;font-weight:700;
+  letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-top:4px;}
+.gallery__item.is-tall{height:500px;}
+.gallery__item.is-wide{width:420px;}
+.gallery__link{font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--primary);display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  padding:10px 20px;border:1px solid rgba(144,77,0,.25);border-radius:var(--radius-full);
+  background:rgba(255,255,255,.5);transition:all var(--dur) var(--ease);}
+.gallery__link:hover{background:var(--primary);color:#fff;opacity:1;}
+
+/* Register */
+.register{position:relative;padding-block:var(--section-gap);background:var(--surface);overflow:hidden;}
+.register__aura{position:absolute;inset:0;z-index:0;
+  background:radial-gradient(circle at center,rgba(144,77,0,.18) 0%,transparent 65%);}
+.register__inner{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 var(--margin-page);}
+.register__card{position:relative;padding:88px 80px;background:rgba(255,255,255,.7);
+  backdrop-filter:blur(36px);-webkit-backdrop-filter:blur(36px);
+  border:1px solid rgba(255,255,255,.55);border-radius:var(--radius-xl);
+  box-shadow:0 30px 80px rgba(144,77,0,.25);overflow:hidden;text-align:center;}
+.register__card::before,.register__card::after{content:'';position:absolute;
+  width:320px;height:320px;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.register__card::before{background:rgba(144,77,0,.18);top:-120px;right:-100px;}
+.register__card::after{background:rgba(111,80,146,.18);bottom:-120px;left:-100px;}
+.register__kicker{font-size:12px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--primary);margin-bottom:22px;}
+.register__title{font-family:var(--font-display);font-weight:800;font-size:64px;line-height:1.05;
+  letter-spacing:-0.02em;color:var(--on-surface);margin-bottom:16px;}
+.register__title-ko{font-family:'Noto Sans KR',var(--font-sans);font-weight:700;font-size:20px;
+  letter-spacing:0.04em;color:var(--primary);margin-bottom:26px;}
+.register__lead{max-width:520px;margin:0 auto 36px;font-family:'Noto Sans KR',var(--font-sans);
+  font-size:16px;line-height:1.75;color:var(--on-surface-variant);}
+.register__price{display:inline-flex;align-items:baseline;gap:12px;margin-bottom:36px;
+  padding:14px 28px;background:var(--primary-fixed);border-radius:var(--radius-full);}
+.register__price-num{font-family:var(--font-display);font-weight:800;font-size:28px;
+  color:var(--on-primary-fixed);}
+.register__price-label{font-family:'Noto Sans KR',var(--font-sans);font-size:13px;font-weight:600;
+  color:var(--on-primary-fixed-variant);}
+.register__ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.register__deadline{margin-top:28px;font-family:'Noto Sans KR',var(--font-sans);
+  font-size:13px;color:var(--on-surface-variant);}
+.register__deadline b{color:var(--primary);font-weight:700;}
+
+/* Footer */
+.footer{background:var(--surface-container);border-top:1px solid rgba(144,77,0,.08);padding:80px 0 36px;}
+.footer__inner{max-width:var(--container-max);margin:0 auto;padding:0 var(--margin-page);}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+.footer__brand-mark{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;}
+.footer__brand-name{font-family:var(--font-display);font-weight:800;font-size:16px;
+  letter-spacing:0.22em;color:var(--on-surface);}
+.footer__about{font-family:'Noto Sans KR',var(--font-sans);font-size:14px;line-height:1.7;
+  color:var(--on-surface-variant);max-width:320px;}
+.footer__h{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:0.24em;
+  text-transform:uppercase;color:var(--primary);margin:0 0 18px;}
+.footer__col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.footer__col a,.footer__col span{font-family:'Noto Sans KR',var(--font-sans);font-size:14px;
+  color:var(--on-surface-variant);text-decoration:none;line-height:1.5;}
+.footer__col a:hover{color:var(--primary);}
+.footer__copy{padding-top:28px;border-top:1px solid rgba(144,77,0,.08);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  font-family:'Noto Sans KR',var(--font-sans);font-size:12px;color:var(--on-surface-variant);opacity:.8;}
+
+/* Gallery placeholder tiles */
+.gallery__placeholder{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;
+  background:linear-gradient(135deg,var(--surface-container),var(--surface-container-highest));}
+.gallery__placeholder svg{opacity:.3;}
+.gallery__placeholder span{font-size:11px;color:var(--on-surface-variant);opacity:.6;text-align:center;padding:0 16px;}
+
+/* Responsive */
+@media(max-width:1080px){
+  .hero__display{font-size:120px;}
+  .hero[data-comp="photo-led"] .hero__display{font-size:100px;}
+  .hero[data-comp="photo-led"] .hero__inner{grid-template-columns:1fr;}
+  .hero[data-comp="photo-led"] .hero__media{display:none;}
+  .about__grid{grid-template-columns:1fr;gap:48px;}
+  .footer__grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:720px){
+  :root{--margin-page:24px;--section-gap:80px;}
+  .hero__display{font-size:72px;}
+  .section__title-en{font-size:36px;}
+  .register__title{font-size:40px;}
+  .video__en{font-size:48px;}
+  .nav__links{display:none;}
+  .footer__grid{grid-template-columns:1fr;}
+
+  /* 1. Nav: 키즈 바이블 캠프 1줄로 */
+  .nav__wordmark small{white-space:nowrap;font-size:10px;}
+
+  /* 2. Hero 서브타이틀: 새로운 피조물로 줄바꿈 + 간격 */
+  .hero__display-ko{
+    white-space:pre-line;
+    line-height:1.7;
+    font-size:18px;
+  }
+
+  /* 3. About 한국어 타이틀 줄바꿈 */
+  .section__title-ko{
+    word-break:keep-all;
+    line-height:1.6;
+  }
+
+  /* 4. 필라 박스 내용 가운데 정렬 */
+  .pillar{flex-direction:column;align-items:center;text-align:center;}
+  .pillar__title{text-align:center;}
+  .pillar__desc{text-align:center;}
+
+  /* 5. REGISTRATION OPEN 두 줄 정렬 */
+  .register__kicker{
+    word-break:keep-all;
+    white-space:pre-line;
+    line-height:1.8;
+    font-size:11px;
+  }
+
+  /* 6. Step Into The Change Up 2줄 정렬 */
+  .register__title{
+    font-size:36px;
+    word-break:keep-all;
+    line-height:1.2;
+  }
+
+  /* 7. 아이의 여름, 가장 빛나는 4일 2줄 정렬 */
+  .register__title-ko{
+    word-break:keep-all;
+    line-height:1.8;
+    white-space:pre-line;
+  }
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+// ── image-slot custom element (simplified placeholder-only version) ──
+// Full drag-drop is a design-tool feature; for production we render styled placeholders.
+(() => {
+  class ImageSlot extends HTMLElement {
+    connectedCallback() {
+      if (this._init) return;
+      this._init = true;
+      const ph = this.getAttribute('placeholder') || 'Drop an image';
+      const radius = this.getAttribute('radius') || '12';
+      Object.assign(this.style, {
+        display: 'block',
+        width: '100%',
+        height: '100%',
+        borderRadius: radius + 'px',
+        background: 'linear-gradient(135deg, #efe4f7, #eadef2)',
+        position: 'relative',
+        overflow: 'hidden',
+      });
+      this.innerHTML = `<div style="position:absolute;inset:0;display:flex;flex-direction:column;
+        align-items:center;justify-content:center;gap:8px;padding:16px;text-align:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(144,77,0,.4)"
+             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <path d="m21 15-5-5L5 21"/>
+        </svg>
+        <span style="font-size:12px;color:rgba(144,77,0,.5);font-family:Montserrat,sans-serif;">${ph}</span>
+      </div>`;
+    }
+  }
+  if (!customElements.get('image-slot')) customElements.define('image-slot', ImageSlot);
+})();
+</script>
+
+<script type="text/babel">
+
+// ── app ──
+const { useState, useEffect } = React;
+
+function Nav({ onRegister }) {
+  const [active, setActive] = useState('top');
+  useEffect(() => {
+    const ids = ['top','about','schedule','video','gallery','register'];
+    const onScroll = () => {
+      let cur = 'top';
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 120) cur = id;
+      }
+      setActive(cur);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const link = (id, en, ko) => (
+    <a href={`#${id}`} className={`nav__link ${active === id ? 'is-active' : ''}`}>
+      {ko}<span style={{ opacity:.55, marginLeft:6, fontSize:10, letterSpacing:'0.2em' }}>{en}</span>
+    </a>
+  );
+
+  return (
+    <nav className="nav">
+      <div className="nav__inner">
+        <a href="#top" className="nav__brand">
+          <span className="nav__mark">L</span>
+          <span className="nav__wordmark">LFGC<small>Kids Bible Camp</small></span>
+        </a>
+        <div className="nav__links">
+          {link('about','ABOUT','캠프 소개')}
+          {link('schedule','SCHEDULE','일정')}
+          {link('video','VIDEO','영상')}
+          {link('gallery','GALLERY','사진')}
+        </div>
+        <button className="btn btn-primary nav__cta" onClick={onRegister}>등록하기 · Register</button>
+      </div>
+    </nav>
+  );
+}
+
+function Hero({ onRegister }) {
+  return (
+    <section className="hero" id="top" data-bg="bokeh" data-comp="typographic">
+      <div className="hero__bokeh">
+        <div className="hero__bokeh-a" />
+        <div className="hero__bokeh-b" />
+        <div className="hero__bokeh-c" />
+      </div>
+      <div className="hero__inner">
+        <div className="hero__copy">
+          <div className="hero__kicker">
+            <span className="hero__kicker-dot" />
+            <span className="hero__kicker-text">LFGC KIDS BIBLE CAMP · 2026</span>
+          </div>
+          <h1 className="hero__display">CHANGE<br/>UP</h1>
+          <div className="hero__display-ko">체인지 업 —{'\n'}새로운 피조물로.</div>
+          <blockquote className="hero__verse">
+            그런즉 누구든지 그리스도 안에 있으면 새로운 피조물이라
+            이전 것은 지나갔으니 보라 새 것이 되었도다.
+            <cite>고린도후서 5:17 · 2 Corinthians 5:17</cite>
+          </blockquote>
+          <div className="hero__meta">
+            <div className="hero__meta-item">
+              <div className="hero__meta-icon"><span className="material-symbols-outlined">event</span></div>
+              <div className="hero__meta-text"><small>DATES · 날짜</small>21–24 July 2026</div>
+            </div>
+            <div className="hero__meta-item">
+              <div className="hero__meta-icon"><span className="material-symbols-outlined">groups</span></div>
+              <div className="hero__meta-text"><small>AGES · 대상</small>초등 1–6학년 (Year 1–6)</div>
+            </div>
+            <div className="hero__meta-item">
+              <div className="hero__meta-icon"><span className="material-symbols-outlined">location_on</span></div>
+              <div className="hero__meta-text"><small>VENUE · 장소</small>Oakwood Youth Challenge, Wokingham</div>
+            </div>
+          </div>
+          <div className="hero__ctas">
+            <button className="btn btn-primary" onClick={onRegister}>
+              등록하기 · Register
+              <span className="material-symbols-outlined">arrow_forward</span>
+            </button>
+            <a className="btn btn-glass" href="#video">
+              <span className="material-symbols-outlined">play_circle</span>
+              2025 영상 보기
+            </a>
+          </div>
+        </div>
+        {false && (
+          <div className="hero__media">
+            <div className="hero__media-frame">
+              <image-slot id="hero-photo" shape="rounded" radius="24"
+                placeholder="히어로 사진 — 캠프 장면을 드래그해 주세요"></image-slot>
+            </div>
+            <div className="hero__media-tag">
+              <span className="material-symbols-outlined">auto_awesome</span>
+              <div className="hero__media-tag-text">
+                <small>THEME · 주제</small>Breakthrough · 돌파
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="hero__scroll">
+        <span className="material-symbols-outlined">keyboard_double_arrow_down</span>
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  const pillars = [
+    { en:'WORSHIP', ko:'예배', icon:'church', desc:'함께 부르는 찬양과 말씀으로 하루를 시작합니다.' },
+    { en:'BIBLE', ko:'말씀', icon:'menu_book', desc:'연령별 소그룹으로 요한복음을 깊이 묵상해요.' },
+    { en:'PLAY', ko:'올림픽', icon:'sports_kabaddi', desc:'오크우드의 숲과 들에서 마음껏 뛰노는 시간.' },
+    { en:'CRAFT', ko:'공과', icon:'palette', desc:'주제 «체인지 업»을 손으로 표현하는 워크샵.' },
+  ];
+  return (
+    <section className="section about" id="about">
+      <div className="section__inner">
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
+          <div className="section__kicker">
+            <span className="section__kicker-bar" />
+            <span className="section__kicker-text">ABOUT · 캠프 소개</span>
+          </div>
+          <h2 className="section__title-en">A Summer to<br/>Change Up.</h2>
+          <div className="section__title-ko">한 여름,{'\n'}아이들이 새로워지는 시간.</div>
+          <p style={{ marginTop:28 }}>
+            2026 LFGC 키즈 바이블 캠프는 «체인지 업 — Change Up»을 주제로,
+            고린도후서 5:17의 말씀처럼 그리스도 안에서 새로운 피조물로
+            변화되는 여정을 함께 나눕니다.
+          </p>
+          <p>
+            초등 1–6학년 어린이들이 4일 동안 예배·말씀·놀이·공과 안에서
+            하나님과, 친구들과, 자기 자신과 더 가까워지는 여정을 떠납니다.
+          </p>
+          <div className="about__pillars" style={{ marginTop:36 }}>
+            {pillars.map(p => (
+              <div className="pillar" key={p.en}>
+                <div className="pillar__icon">
+                  <span className="material-symbols-outlined">{p.icon}</span>
+                </div>
+                <div>
+                  <div className="pillar__title"><small>{p.en}</small>{p.ko}</div>
+                  <div className="pillar__desc">{p.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const SCHEDULE_DATA = [
+  { day:'DAY 01', dateNum:'21', dateMo:'JULY', label:'도착 · Arrival', rows:[
+    { time:'14:00', tag:'WELCOME', title:'체크인 · Camp Check-in', desc:'오크우드 캠프장 도착, 짐 정리 및 첫 인사.', icon:'flag' },
+    { time:'16:30', tag:'OPENING', title:'오프닝 예배 · Opening Worship', desc:'4일의 여정을 함께 여는 첫 찬양과 기도.', icon:'church', pinned:true },
+    { time:'18:30', tag:'DINNER', title:'저녁 식사 · Dinner', desc:'캠프장 식당에서 모두 함께.', icon:'restaurant' },
+    { time:'20:00', tag:'GAMES', title:'아이스브레이커 게임 · Team Games', desc:'서로의 이름을 외우며 마음을 여는 시간.', icon:'sports_kabaddi' },
+  ]},
+  { day:'DAY 02', dateNum:'22', dateMo:'JULY', label:'벽 · The Wall', rows:[
+    { time:'07:30', tag:'MORNING', title:'아침 묵상 · Morning Devotion', desc:'하루를 여는 짧은 말씀과 기도.', icon:'light_mode' },
+    { time:'10:00', tag:'SESSION', title:'말씀 ① · 우리 앞의 벽', desc:'요한복음 3장 — 니고데모의 막힌 마음.', icon:'menu_book', pinned:true },
+    { time:'14:00', tag:'WORKSHOP', title:'워크샵 · Craft & Play', desc:'학년별 만들기, 야외 게임, 자유시간.', icon:'palette' },
+    { time:'19:30', tag:'EVENING', title:'저녁 예배 · Evening Worship', desc:'촛불 가운데 부르는 찬양.', icon:'auto_awesome' },
+  ]},
+  { day:'DAY 03', dateNum:'23', dateMo:'JULY', label:'돌파 · Breakthrough', rows:[
+    { time:'07:30', tag:'MORNING', title:'아침 묵상 · Morning Devotion', desc:'오늘의 말씀과 함께 시작합니다.', icon:'light_mode' },
+    { time:'10:00', tag:'SESSION', title:'말씀 ② · 사랑이 통과할 때', desc:'요한복음 3:16 — 하나님의 돌파.', icon:'menu_book', pinned:true },
+    { time:'13:30', tag:'OUTDOOR', title:'야외 활동 · Forest Adventure', desc:'오크우드 숲에서 팀별 미션.', icon:'forest' },
+    { time:'20:00', tag:'CAMPFIRE', title:'캠프파이어 · Campfire Night', desc:'나눔과 간증, 별빛 아래의 찬양.', icon:'local_fire_department', pinned:true },
+  ]},
+  { day:'DAY 04', dateNum:'24', dateMo:'JULY', label:'빛 · Sent', rows:[
+    { time:'08:00', tag:'MORNING', title:'아침 식사 · Breakfast', desc:'함께하는 마지막 식사.', icon:'restaurant' },
+    { time:'10:00', tag:'CLOSING', title:'말씀 ③ · 빛 가운데로', desc:'돌파한 마음으로 다시 일상으로.', icon:'wb_sunny', pinned:true },
+    { time:'12:00', tag:'COMMISSION', title:'파송 예배 · Sending Worship', desc:'부모님과 함께 드리는 마지막 예배.', icon:'flight_takeoff' },
+    { time:'14:00', tag:'FAREWELL', title:'귀가 · Pickup', desc:'안전한 귀가, 다시 만나요.', icon:'waving_hand' },
+  ]},
+];
+
+function Schedule() {
+  const [day, setDay] = useState(2);
+  const data = SCHEDULE_DATA[day];
+  return (
+    <section className="section schedule" id="schedule">
+      <div className="section__inner">
+        <div className="section__head section__head--center">
+          <div className="section__kicker" style={{ justifyContent:'center' }}>
+            <span className="section__kicker-bar" />
+            <span className="section__kicker-text">SCHEDULE · 일정</span>
+          </div>
+          <h2 className="section__title-en">4 Days, One Change Up.</h2>
+          <div className="section__title-ko">3박 4일, 새로운 피조물로.</div>
+          <p className="section__lead">
+            매일 아침 묵상부터 저녁 예배까지 — 요일을 눌러 각 날의 흐름을 살펴보세요.
+          </p>
+        </div>
+        <div className="schedule__tabs">
+          {SCHEDULE_DATA.map((d, i) => (
+            <button key={d.day} className={`schedule__tab ${i === day ? 'is-on' : ''}`} onClick={() => setDay(i)}>
+              <div className="schedule__tab-day">{d.day} · {d.dateMo}</div>
+              <div className="schedule__tab-date">{d.dateNum}</div>
+              <div className="schedule__tab-label">{d.label}</div>
+            </button>
+          ))}
+        </div>
+        <div className="schedule__list">
+          {data.rows.map((r, i) => (
+            <div key={i} className={`schedule__row ${r.pinned ? 'is-pinned' : ''}`}>
+              <div className="schedule__time">{r.time}</div>
+              <div className="schedule__body">
+                <div className="schedule__title"><small>{r.tag}</small>{r.title}</div>
+                <div className="schedule__desc">{r.desc}</div>
+              </div>
+              <span className="material-symbols-outlined schedule__icon"
+                style={r.pinned ? { fontVariationSettings:"'FILL' 1" } : undefined}>
+                {r.icon}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function VideoSection() {
+  const [playing, setPlaying] = React.useState(false);
+  const videoRef = React.useRef(null);
+
+  const handlePlay = () => {
+    setPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play();
+      videoRef.current.controls = true;
+    }
+  };
+
+  return (
+    <section className="video" id="video">
+      <div className="video__bg">
+        <img src="./hero-cosmic-night.png" alt="" />
+      </div>
+      <div className="video__overlay" />
+      <div className="video__inner">
+        <div className="video__bilingual">
+          <div className="video__en">VIDEO</div>
+        </div>
+        <p className="video__lead">
+          지난 여름 LFGC 키즈 바이블 캠프 2025의 영상을 만나보세요.
+          아이들의 웃음과 찬양, 그리고 빛나는 순간들.
+        </p>
+        <div style={{
+          position: 'relative',
+          width: '100%', maxWidth: 720,
+          borderRadius: 'var(--radius-xl)',
+          boxShadow: '0 30px 80px rgba(0,0,0,.45)',
+          overflow: 'hidden',
+          background: '#000',
+          border: '1px solid rgba(255,255,255,.18)',
+          aspectRatio: '16/9',
+        }}>
+          <video
+            ref={videoRef}
+            src="./camp-video.mp4"
+            playsInline
+            preload="metadata"
+            onLoadedMetadata={e => { e.target.currentTime = 0.5; }}
+            style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover' }}
+          />
+          {!playing && (
+            <div
+              onClick={handlePlay}
+              style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', flexDirection: 'column',
+                alignItems: 'center', justifyContent: 'center',
+                cursor: 'pointer',
+                background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,.55))',
+              }}
+            >
+              <div style={{
+                width: 88, height: 88, borderRadius: '50%',
+                background: 'rgba(255,255,255,.94)',
+                display: 'grid', placeItems: 'center',
+                boxShadow: '0 20px 60px rgba(0,0,0,.4)',
+                transition: 'transform 0.3s ease',
+              }}
+                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.06)'}
+                onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                <span className="material-symbols-outlined"
+                  style={{ fontSize: 44, color: '#904d00', fontVariationSettings: "'FILL' 1" }}>
+                  play_arrow
+                </span>
+              </div>
+              <div style={{ position: 'absolute', left: 28, bottom: 22, color: '#fff' }}>
+                <div style={{ fontFamily: "'Noto Sans KR',sans-serif", fontWeight: 700, fontSize: 16 }}>
+                  LFGC 키즈 바이블 캠프 2025 하이라이트
+                </div>
+                <div style={{ fontFamily: 'Montserrat,sans-serif', fontSize: 11, fontWeight: 700,
+                  letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,.7)', marginTop: 4 }}>
+                  CHANGE UP · 체인지 업
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const OAKWOOD_PHOTOS = [
+  './assets/gallery/oakwood/20250722_120253.jpg',
+  './assets/gallery/oakwood/20250722_120456.jpg',
+  './assets/gallery/oakwood/20250722_160839.jpg',
+  './assets/gallery/oakwood/20250722_160923.jpg',
+  './assets/gallery/oakwood/IMG_2966.JPG',
+  './assets/gallery/oakwood/IMG_2977.JPG',
+];
+
+const WORSHIP_PHOTOS = [
+  './assets/gallery/worship/IMG_3099.JPG',
+  './assets/gallery/worship/P1103162.JPG',
+  './assets/gallery/worship/P1103164.JPG',
+  './assets/gallery/worship/P1103175.JPG',
+  './assets/gallery/worship/P1103176.JPG',
+  './assets/gallery/worship/P1103178.JPG',
+  './assets/gallery/worship/P1103195.JPG',
+  './assets/gallery/worship/P1103202.JPG',
+  './assets/gallery/worship/P1103238.JPG',
+  './assets/gallery/worship/P1103259.JPG',
+  './assets/gallery/worship/P1103326.JPG',
+  './assets/gallery/worship/P1103330.JPG',
+  './assets/gallery/worship/P1103352.JPG',
+  './assets/gallery/worship/P1103470.JPG',
+  './assets/gallery/worship/P1103472.JPG',
+];
+
+const OLYMPICS_PHOTOS = [
+  './assets/gallery/olympics/P1114229.JPG',
+  './assets/gallery/olympics/P1114240.JPG',
+  './assets/gallery/olympics/P1114281.JPG',
+  './assets/gallery/olympics/P1114292.JPG',
+  './assets/gallery/olympics/P1114302.JPG',
+  './assets/gallery/olympics/P1114306.JPG',
+  './assets/gallery/olympics/P1114310.JPG',
+  './assets/gallery/olympics/P1114316.JPG',
+  './assets/gallery/olympics/P1114343.JPG',
+  './assets/gallery/olympics/P1114350.JPG',
+  './assets/gallery/olympics/P1114363.JPG',
+  './assets/gallery/olympics/P1114368.JPG',
+  './assets/gallery/olympics/P1114372.JPG',
+  './assets/gallery/olympics/P1114469.JPG',
+  './assets/gallery/olympics/P1114475.JPG',
+  './assets/gallery/olympics/P1114486.JPG',
+];
+
+const CAMPFIRE_PHOTOS = [
+  './assets/gallery/campfire/20250724_234450.jpg',
+  './assets/gallery/campfire/IMG_4919.jpg',
+  './assets/gallery/campfire/IMG_4934.jpg',
+  './assets/gallery/campfire/IMG_4936.jpg',
+  './assets/gallery/campfire/IMG_4940.JPG',
+  './assets/gallery/campfire/IMG_4944.jpg',
+  './assets/gallery/campfire/IMG_7377.jpg',
+  './assets/gallery/campfire/IMG_7378.jpg',
+];
+
+const GALLERY_ITEMS = [
+  { id:'g1', title:'Oakwood 입성', meta:'ARRIVAL', src: OAKWOOD_PHOTOS[0], photos: OAKWOOD_PHOTOS },
+  { id:'g7', title:'찬양과 말씀', meta:'WORSHIP & BIBLE', src: WORSHIP_PHOTOS[0], photos: WORSHIP_PHOTOS },
+  { id:'g9', title:'올림픽', meta:'OLYMPICS', src: OLYMPICS_PHOTOS[0], photos: OLYMPICS_PHOTOS },
+  { id:'g10', title:'캠프파이어', meta:'CAMPFIRE', src: CAMPFIRE_PHOTOS[0], photos: CAMPFIRE_PHOTOS },
+];
+
+function Gallery() {
+  const [lightboxIdx, setLightboxIdx] = useState(null);
+  const [activePhotos, setActivePhotos] = useState([]);
+
+  const openLightbox = (photos, startIdx) => { setActivePhotos(photos); setLightboxIdx(startIdx); document.body.style.overflow = 'hidden'; };
+  const closeLightbox = () => { setLightboxIdx(null); setActivePhotos([]); document.body.style.overflow = ''; };
+  const prev = () => setLightboxIdx(i => (i - 1 + activePhotos.length) % activePhotos.length);
+  const next = () => setLightboxIdx(i => (i + 1) % activePhotos.length);
+
+  useEffect(() => {
+    if (lightboxIdx === null) return;
+    const onKey = e => {
+      if (e.key === 'ArrowLeft') prev();
+      else if (e.key === 'ArrowRight') next();
+      else if (e.key === 'Escape') closeLightbox();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightboxIdx, activePhotos]);
+
+  return (
+    <section className="section gallery" id="gallery">
+      <div className="gallery__head">
+        <div>
+          <div className="section__kicker">
+            <span className="section__kicker-bar" />
+            <span className="section__kicker-text">GALLERY · 사진</span>
+          </div>
+          <h2 className="section__title-en">Last Summer, Captured.</h2>
+          <div className="section__title-ko">지난 여름의 한 장면, 한 장면.</div>
+        </div>
+      </div>
+      <div className="gallery__rail">
+        {GALLERY_ITEMS.map(g => (
+          <div key={g.id}
+            className={`gallery__item${g.tall?' is-tall':''}${g.wide?' is-wide':''}`}
+            onClick={g.photos ? () => openLightbox(g.photos, 0) : undefined}
+            style={g.photos ? { cursor:'pointer' } : undefined}
+          >
+            {g.src
+              ? <img src={g.src} alt={g.title} style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} />
+              : <image-slot id={`gallery-${g.id}`} shape="rounded" radius="24" placeholder={`${g.title} 사진을 드래그`}></image-slot>
+            }
+            <div className="gallery__item-overlay" />
+            {g.photos && (
+              <div style={{
+                position:'absolute', top:16, right:16, zIndex:3,
+                background:'rgba(255,255,255,.85)', borderRadius:20,
+                padding:'4px 10px', display:'flex', alignItems:'center', gap:6,
+                fontSize:11, fontWeight:700, letterSpacing:'0.1em', color:'#904d00',
+              }}>
+                <span className="material-symbols-outlined" style={{ fontSize:15 }}>photo_library</span>
+                {g.photos.length}장
+              </div>
+            )}
+            <div className="gallery__item-cap">
+              <div className="gallery__item-cap-title">{g.title}</div>
+              <div className="gallery__item-cap-meta">{g.meta}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {lightboxIdx !== null && (
+        <div onClick={closeLightbox} style={{
+          position:'fixed', inset:0, zIndex:1000,
+          background:'rgba(10,5,20,.92)', backdropFilter:'blur(12px)',
+          display:'flex', alignItems:'center', justifyContent:'center',
+        }}>
+          {/* 메인 이미지 */}
+          <img
+            src={activePhotos[lightboxIdx]}
+            alt=""
+            onClick={e => e.stopPropagation()}
+            style={{
+              maxWidth:'88vw', maxHeight:'82vh',
+              borderRadius:16, objectFit:'contain',
+              boxShadow:'0 30px 80px rgba(0,0,0,.6)',
+            }}
+          />
+
+          {/* 이전 */}
+          <button onClick={e => { e.stopPropagation(); prev(); }} style={{
+            position:'fixed', left:24, top:'50%', transform:'translateY(-50%)',
+            width:52, height:52, borderRadius:'50%', border:'none', cursor:'pointer',
+            background:'rgba(255,255,255,.15)', backdropFilter:'blur(8px)',
+            color:'#fff', display:'grid', placeItems:'center',
+            transition:'background .2s',
+          }}
+            onMouseEnter={e => e.currentTarget.style.background='rgba(255,255,255,.28)'}
+            onMouseLeave={e => e.currentTarget.style.background='rgba(255,255,255,.15)'}
+          >
+            <span className="material-symbols-outlined" style={{ fontSize:28 }}>chevron_left</span>
+          </button>
+
+          {/* 다음 */}
+          <button onClick={e => { e.stopPropagation(); next(); }} style={{
+            position:'fixed', right:24, top:'50%', transform:'translateY(-50%)',
+            width:52, height:52, borderRadius:'50%', border:'none', cursor:'pointer',
+            background:'rgba(255,255,255,.15)', backdropFilter:'blur(8px)',
+            color:'#fff', display:'grid', placeItems:'center',
+            transition:'background .2s',
+          }}
+            onMouseEnter={e => e.currentTarget.style.background='rgba(255,255,255,.28)'}
+            onMouseLeave={e => e.currentTarget.style.background='rgba(255,255,255,.15)'}
+          >
+            <span className="material-symbols-outlined" style={{ fontSize:28 }}>chevron_right</span>
+          </button>
+
+          {/* 닫기 */}
+          <button onClick={closeLightbox} style={{
+            position:'fixed', top:20, right:20,
+            width:44, height:44, borderRadius:'50%', border:'none', cursor:'pointer',
+            background:'rgba(255,255,255,.15)', backdropFilter:'blur(8px)',
+            color:'#fff', display:'grid', placeItems:'center',
+          }}>
+            <span className="material-symbols-outlined" style={{ fontSize:22 }}>close</span>
+          </button>
+
+          {/* 썸네일 스트립 */}
+          <div onClick={e => e.stopPropagation()} style={{
+            position:'fixed', bottom:24, left:'50%', transform:'translateX(-50%)',
+            display:'flex', gap:8,
+          }}>
+            {activePhotos.map((src, i) => (
+              <img key={i} src={src} alt="" onClick={() => setLightboxIdx(i)} style={{
+                width:60, height:44, objectFit:'cover', borderRadius:8, cursor:'pointer',
+                outline: i === lightboxIdx ? '2px solid #d0bcff' : '2px solid transparent',
+                opacity: i === lightboxIdx ? 1 : 0.55,
+                transition:'opacity .2s, outline .2s',
+              }} />
+            ))}
+          </div>
+
+          {/* 카운터 */}
+          <div style={{
+            position:'fixed', top:24, left:'50%', transform:'translateX(-50%)',
+            color:'rgba(255,255,255,.7)', fontSize:13, fontWeight:600,
+            letterSpacing:'0.12em', fontFamily:'Montserrat,sans-serif',
+          }}>
+            {lightboxIdx + 1} / {activePhotos.length}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function RegisterCTA({ onRegister }) {
+  return (
+    <section className="register" id="register">
+      <div className="register__aura" />
+      <div className="register__inner">
+        <div className="register__card">
+          <div className="register__kicker">REGISTRATION OPEN{'\n'}등록 접수 중</div>
+          <h2 className="register__title">Step Into<br/>The Change Up.</h2>
+          <div className="register__title-ko">아이의 여름,{'\n'}가장 빛나는 4일.</div>
+          <p className="register__lead">
+            2026년 LFGC 키즈 바이블 캠프 등록은 온라인으로 진행됩니다.
+            정원이 한정되어 있으니 서둘러 신청해 주세요.
+          </p>
+          <div className="register__ctas">
+            <button className="btn btn-primary" onClick={onRegister}>
+              지금 등록하기
+              <span className="material-symbols-outlined">arrow_forward</span>
+            </button>
+            <a className="btn btn-glass" href="mailto:camp@lfgc.org">
+              <span className="material-symbols-outlined">mail</span>
+              문의하기 · Contact
+            </a>
+          </div>
+          <div className="register__deadline">
+            등록 마감 <b>18 July 2026</b>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footer__inner">
+        <div className="footer__grid">
+          <div>
+            <div className="footer__brand-mark">
+              <span className="nav__mark">L</span>
+              <span className="footer__brand-name">LFGC KIDS</span>
+            </div>
+            <p className="footer__about">
+              LFGC 키즈 바이블 캠프는 매년 여름, 영국에 거주하는 한인 어린이들이
+              하나님과 친구와 자연 안에서 자라는 시간을 만들어 갑니다.
+            </p>
+          </div>
+          <div className="footer__col">
+            <div className="footer__h">VENUE · 장소</div>
+            <ul>
+              <li><span>Oakwood Youth Challenge</span></li>
+              <li><span>Waterloo Road, Wokingham</span></li>
+              <li><span>RG40 3DA, United Kingdom</span></li>
+              <li><a href="https://maps.google.com/?q=Oakwood+Youth+Challenge+Wokingham" target="_blank" rel="noreferrer">지도 보기 →</a></li>
+            </ul>
+          </div>
+          <div className="footer__col">
+            <div className="footer__h">CONTACT · 연락</div>
+            <ul>
+              <li><a href="mailto:lfgcuk0691@gmail.com">lfgcuk0691@gmail.com</a></li>
+              <li><a href="tel:+442089446781">+44 20 8944 6781</a></li>
+            </ul>
+          </div>
+          <div className="footer__col">
+            <div className="footer__h">FOLLOW · 소식</div>
+            <ul>
+              <li><a href="https://www.lfgc.co.uk/" target="_blank" rel="noreferrer">LFGC Website</a></li>
+              <li><a href="https://www.youtube.com/@lfgcmmt" target="_blank" rel="noreferrer">영상 자료실 · Youtube</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer__copy">
+          <span>© 2026 LFGC Kids Bible Camp. All rights reserved.</span>
+          <span>Made with light · 빛으로 빚어진 페이지</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function App() {
+  const REGISTER_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfA8H9fsPJHnCjoOznRMt5PIfjKAPAFEAmM7IL-anJshX2vCg/viewform?usp=header';
+  const onRegister = () => {
+    window.open(REGISTER_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  return (
+    <>
+      <Nav onRegister={onRegister} />
+      <Hero onRegister={onRegister} />
+      <About />
+      <Schedule />
+      <VideoSection />
+      <Gallery />
+      <RegisterCTA onRegister={onRegister} />
+      <Footer />
+
+
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>

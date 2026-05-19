@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VESPER | A Luminous Worship Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#342e3c",
+                    "on-surface-variant": "#494454",
+                    "on-secondary-fixed": "#29074a",
+                    "surface-variant": "#eadef2",
+                    "surface-dim": "#e1d6e9",
+                    "on-tertiary-fixed-variant": "#46464f",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1f1926",
+                    "surface": "#fef7ff",
+                    "on-surface": "#1f1926",
+                    "surface-container": "#f5eafd",
+                    "on-secondary-fixed-variant": "#573878",
+                    "outline-variant": "#cbc3d7",
+                    "tertiary-container": "#74747e",
+                    "outline": "#7b7486",
+                    "inverse-on-surface": "#f8edff",
+                    "surface-bright": "#fef7ff",
+                    "on-primary-container": "#fffbff",
+                    "on-tertiary-container": "#fffbff",
+                    "primary-container": "#8455ef",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#6d3bd7",
+                    "tertiary-fixed-dim": "#c7c5d1",
+                    "background": "#fef7ff",
+                    "primary-fixed-dim": "#d0bcff",
+                    "tertiary": "#5b5b65",
+                    "inverse-primary": "#d0bcff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#e9ddff",
+                    "tertiary-fixed": "#e3e1ed",
+                    "secondary-fixed": "#efdbff",
+                    "on-tertiary-fixed": "#1a1b23",
+                    "secondary-container": "#d9b5ff",
+                    "secondary": "#6f5092",
+                    "on-primary-fixed": "#23005c",
+                    "on-secondary": "#ffffff",
+                    "primary": "#6b38d4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#5516be",
+                    "on-secondary-container": "#614283",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#faf0ff",
+                    "surface-container-high": "#efe4f7",
+                    "surface-container-highest": "#eadef2",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#dbb8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-page": "64px",
+                    "section-gap": "120px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "display-xl": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "label-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-xl": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(32px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.15);
+        }
+        .aura-glow {
+            background: radial-gradient(circle at center, rgba(132, 85, 239, 0.15) 0%, transparent 70%);
+        }
+        .bokeh-orb {
+            filter: blur(80px);
+            opacity: 0.4;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden font-body-md">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/20 shadow-[0_10px_40px_rgba(139,92,246,0.15)]">
+<div class="flex justify-between items-center h-20 px-margin-page max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg tracking-[0.2em] font-bold text-primary">VESPER</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Experience</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors transition-opacity duration-300 hover:opacity-80" href="#">Speakers</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors transition-opacity duration-300 hover:opacity-80" href="#">Schedule</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors transition-opacity duration-300 hover:opacity-80" href="#">Register</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-sm uppercase tracking-widest hover:opacity-80 transition-all active:scale-95">Register</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<!-- Background Elements -->
+<div class="absolute inset-0 z-0">
+<div class="bokeh-orb w-[600px] h-[600px] bg-primary-fixed-dim -top-20 -left-20"></div>
+<div class="bokeh-orb w-[800px] h-[800px] bg-secondary-fixed bottom-0 -right-40"></div>
+</div>
+<div class="relative z-10 px-margin-page max-w-container-max mx-auto text-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em] mb-6 block">Annual Conference 2024</span>
+<h1 class="font-display-xl text-display-xl text-primary mb-8 leading-none">THE LIGHT <br/>OF THE WORLD</h1>
+<p class="font-body-lg text-body-lg text-on-secondary-fixed-variant max-w-2xl mx-auto mb-12 opacity-80">
+                Join us for an immersive night of cinematic worship, where light and sound converge to create a transcendent space for spiritual awakening.
+            </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-12 py-5 rounded-full font-label-sm uppercase tracking-widest shadow-lg shadow-primary/20 active:scale-95 transition-transform">Get Your Ticket</button>
+<button class="glass-card text-primary border border-primary/20 px-12 py-5 rounded-full font-label-sm uppercase tracking-widest active:scale-95 transition-transform flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                    Watch Trailer
+                </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="keyboard_double_arrow_down">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Introduction Section -->
+<section class="py-section-gap px-margin-page max-w-container-max mx-auto relative">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 rounded-xl blur-2xl group-hover:bg-primary/20 transition-all duration-700"></div>
+<img alt="Luminous Space" class="relative z-10 w-full h-[600px] object-cover rounded-xl shadow-2xl" data-alt="A serene architectural space with high ceilings and vast windows allowing streams of soft morning sunlight to pour through. The atmosphere is filled with a light mist that catches the rays of light, creating a spiritual and ethereal glow. Minimalist white seating is arranged in a circular pattern, emphasizing unity and openness in a modern light-mode worship setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV_aUY0BHnj7TyqkgZUKpA9ae6yx9y5V-8a584XzgCnm4e4AizGzV90oQMETmgoyBcyWJrYBFbxnmI457DjRJ8JWCQ4qPUQ4wDN5QPUJY_ZvVyHA-yVvAww-XLPeNaaTUwxsAgM_ZfwdMcxKVtVaenlV4phXhlIee6xJe3jBi91zSMVjc-lw4V242FNUgTcnfsiEnhLjCPDdQMmbsGT1tB70UnGbLsuFKywsvJEc5kSkmQHW_h--CCKXzqKF6ho3DeagbUx4chKpZd"/>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">A Luminous Sanctuary</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                    VESPER is more than a concert; it's a meticulously designed atmosphere where the weight of the world is replaced by the lightness of spirit. 
+                </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                    Our 2024 experience focuses on "Ethereal Radiance," using soft lavender palettes and cinematic light-play to mirror the hope found in divine presence.
+                </p>
+<div class="grid grid-cols-2 gap-8">
+<div class="p-6 glass-card rounded-xl">
+<div class="text-primary-container font-headline-md text-headline-md mb-2">20+</div>
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Worship Leaders</div>
+</div>
+<div class="p-6 glass-card rounded-xl">
+<div class="text-primary-container font-headline-md text-headline-md mb-2">5k+</div>
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Gathered Hearts</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Speakers / Speakers Bento Grid -->
+<section class="py-section-gap bg-surface-container relative overflow-hidden">
+<div class="px-margin-page max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Guiding Voices</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Renowned speakers and artists who share a vision for the intersection of faith and modern creative expression.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Bento Card 1 -->
+<div class="md:col-span-2 relative h-[450px] overflow-hidden rounded-xl group">
+<img alt="Speaker 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A portrait of a charismatic male speaker with a gentle expression, standing on a stage bathed in warm lavender lighting. The background is softly blurred with subtle purple glowing accents. He is wearing a minimalist cream-colored sweater, blending perfectly with the ethereal, high-key light-mode aesthetic of the conference branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVJ9Uk_CAX4uqv5EZxBQyhsORRORiaX4uboSjyseoZFjJyrf8OdYa3uFQXcrDb3YHFQ-k-FCFse6tdXyQqbdkACTSalnbaqMNlmN9B6_V3hqFiXLroHPsY95uCamlF4WfvsNqnfbnvwtd5z6v3EGQCzl33q3TlyzKa2hBJe4SQ38RCYLcXnLDIh0XzNSwBaxa0wypHxH_3ZD-7hZg0A6vj-2pObmT7tQ-DL0OlzNJNxglB2IvweQHWkN9SeLxJ1HhrTdmR7621c-OV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<h3 class="font-headline-md text-headline-md text-white">David Sterling</h3>
+<p class="font-label-sm text-label-sm text-white/80 uppercase tracking-widest">Keynote: Radical Light</p>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="relative h-[450px] overflow-hidden rounded-xl group">
+<img alt="Speaker 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up portrait of a female worship artist singing with her eyes closed in deep concentration. The lighting is soft and airy, with lavender and soft white highlights reflecting off her face. The mood is peaceful and spiritual, captured with a cinematic depth of field that emphasizes the luminous, transcendent atmosphere of the event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy8XGAyk-DxB5OoebPwtcfZ73U76xbImDVrz0Xm4u_jaCdDB8Fj3TOm6cgD7EUkcnzh9rbhF89OFR9qRRDhNfeFS6SR0T1-stG9o_v8XPthpd6k9EmbBYS3hO4UZZHhoi9ZHkxA3UNetmsHeZnlEzhrCtdPEQp7U7flbCuAU-0ZJKHjzD4vStYdvFh4dd28pBDN0loF9ebECdpKdzIaZpk5-OQ3B5vCWViW2Q6oucmMHjS09G7ErGlAYKNq73lo6IqLa1JWIvIxAcQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<h3 class="font-headline-md text-headline-md text-white text-lg">Elena Moore</h3>
+<p class="font-label-sm text-label-sm text-white/80 uppercase tracking-widest">Worship Artist</p>
+</div>
+</div>
+<!-- Bento Card 3 -->
+<div class="relative h-[450px] overflow-hidden rounded-xl group">
+<img alt="Speaker 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A portrait of a young male creative director smiling confidently against a background of soft bokeh lights in shades of violet and white. He represents the modern, visionary leadership of the VESPER conference. The visual style is crisp and high-contrast, with a light-mode color palette that feels fresh, welcoming, and airy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy1OoEElFATScYStpI4UxO5ulc8jKeT1YxI5Z-FJ2pNNtcqh7wSppsGJOWkh75UzIO_VzH1v8XI2y6h1uHk0obcXwjOzXLjY4LTAboV3tLY5OglZ2cqkjkLB-30Q-D7dWPMgv7SZv-azZ00q_Sc_pFSiF9GHBESIgLS8wo6_UnQblCGqV4nrrcKUt4gmXmU1rzGDhCQ6rN8ndNLYcFTIDDJFDbcoB6vKOrVhudsxIvDm90vWVcWmr3EbN-FCq1--VYtnLK2EetEjRN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<h3 class="font-headline-md text-headline-md text-white text-lg">Marcus Chen</h3>
+<p class="font-label-sm text-label-sm text-white/80 uppercase tracking-widest">Visual Director</p>
+</div>
+</div>
+<!-- Bento Card 4 -->
+<div class="md:col-span-2 relative h-[450px] overflow-hidden rounded-xl group">
+<img alt="Speakers Group" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A group of diverse worship leaders gathered together on a brightly lit stage. The environment is airy and filled with soft white and purple gradients. They are looking towards the camera with hopeful expressions, conveying a sense of unity and spiritual purpose. The composition is editorial and elegant, fitting the cinematic, high-production theme of the event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm7kXX9maeVpBbSKOy-WRpLsA22D46Ebnsqyq8pegdUR_1j091W2AcwrvmeH9fD0gzFX9Xk8iS-ZfZQZ2WmpsWYtDSDmGCVYeJej9CfLuaTzDAgXzz1LMvccjMX-l8tI4J3bwNB4oRq6vRuDhmAHHsHagDKUMvUR6YQPpbKrWOZQycC59z1WbIpJml9gxDBwzewJqp1xfpaE8X2I1p_O8MY-jWgF0xCAD_nmo8cvkxwQ1UpqbMsT8NFwQ5QyY987IO2n6KLYczIAVY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-secondary-fixed/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<h3 class="font-headline-md text-headline-md text-white">The Collective</h3>
+<p class="font-label-sm text-label-sm text-white/80 uppercase tracking-widest">Global Outreach Panel</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Schedule Section -->
+<section class="py-section-gap px-margin-page max-w-[900px] mx-auto">
+<div class="text-center mb-20">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em] mb-4 block">The Journey</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Evening Schedule</h2>
+</div>
+<div class="space-y-4">
+<div class="glass-card p-8 rounded-2xl flex flex-col md:flex-row items-center gap-10 group hover:bg-white transition-all duration-300">
+<div class="text-primary font-headline-md text-headline-md w-32 border-r border-primary/20 pr-8">17:00</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-lg text-on-surface mb-1">Twilight Arrivals</h4>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Check-in, coffee bar, and immersive visual lobby gallery open.</p>
+</div>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors" data-icon="light_mode">light_mode</span>
+</div>
+<div class="glass-card p-8 rounded-2xl flex flex-col md:flex-row items-center gap-10 group hover:bg-white transition-all duration-300 border-l-4 border-l-primary">
+<div class="text-primary font-headline-md text-headline-md w-32 border-r border-primary/20 pr-8">19:00</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-lg text-on-surface mb-1">Session I: Awakening</h4>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Opening cinematic worship experience followed by David Sterling.</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="flare" style="font-variation-settings: 'FILL' 1;">flare</span>
+</div>
+<div class="glass-card p-8 rounded-2xl flex flex-col md:flex-row items-center gap-10 group hover:bg-white transition-all duration-300">
+<div class="text-primary font-headline-md text-headline-md w-32 border-r border-primary/20 pr-8">20:30</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-lg text-on-surface mb-1">Intermission</h4>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Light refreshments and community connection in the garden court.</p>
+</div>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors" data-icon="coffee">coffee</span>
+</div>
+<div class="glass-card p-8 rounded-2xl flex flex-col md:flex-row items-center gap-10 group hover:bg-white transition-all duration-300">
+<div class="text-primary font-headline-md text-headline-md w-32 border-r border-primary/20 pr-8">21:15</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-lg text-on-surface mb-1">Session II: Radiance</h4>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Extended acoustic worship, prayer, and candlelight conclusion.</p>
+</div>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+</section>
+<!-- Media Gallery Section -->
+<section class="py-section-gap bg-surface-container-low overflow-hidden">
+<div class="px-margin-page max-w-container-max mx-auto mb-16 flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Experience Captured</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Glimpses of the ethereal moments we share.</p>
+</div>
+<button class="text-primary font-label-sm uppercase tracking-widest flex items-center gap-2 group">
+                View Archive <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-gutter overflow-x-auto pb-10 px-margin-page no-scrollbar">
+<div class="flex-shrink-0 w-80 h-[500px] rounded-xl overflow-hidden glass-card">
+<img alt="Gallery 1" class="w-full h-full object-cover" data-alt="An expansive view of a modern conference hall filled with soft purple and white ambient lighting. Glowing lavender circles hang from the ceiling, creating a sense of ethereal wonder. The crowd is seen as silhouettes against the luminous, bright stage, capturing a moment of collective worship and spiritual unity in a high-production, airy environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBclNxo6iHZqu5ltqD2LVHg31n8T4U7W66oJIReGv_LLMe6RioZ5X_iIEYuuMr0abp7i5ssGMO1VJ1XKIDPMLoc2MZfvdSD8NUaVUE6UcmY7_Lhq9nGqVFBxV2tb7jN_3PrcBr342SbzY2hxP6bEeycJzI_MexOcZ6CpiYSLlXG5RooVvnzBbI1o-h6sSiSuFgfZmzySxe7dMpPlrmMwLLwhlTbf7Jph68Q7YsabkOTOVwHVAmZPSchJQk0D7ItZw4pMQcLSkrrKdBm"/>
+</div>
+<div class="flex-shrink-0 w-80 h-[500px] rounded-xl overflow-hidden glass-card">
+<img alt="Gallery 2" class="w-full h-full object-cover" data-alt="A close-up of professional audio equipment on a minimalist, light-colored table, reflecting soft purple glow from nearby neon accents. The background is a wash of luminous lavender and white, suggesting a high-quality production setting. The overall mood is technologically sophisticated yet clean and serene, aligned with the modern worship conference aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZXRn2DPTG0vrmUvzTR6Kj9IN3XPpvVjgO7afqMXAq7LZT7-3CatghGJNFi_4RnQkG0tWyxmNc6BFhpx007hGILNpjAEInRVy6D6e3QFlRij5d_8i23F1hpQ86cVSsmErzcySkWpmvy78nS0MPU2ySAjKzAWZkH0EhE7ApxXX9KTnjWhu_qrTzEoH4IBebnlGd5EyoO51pe3Y4-5hu8xcE-YAM3MBaWpijeCJi2MjHwuEK-lT5nGWoTsOYWBFzrc12b-kSigQ26TJq"/>
+</div>
+<div class="flex-shrink-0 w-80 h-[500px] rounded-xl overflow-hidden glass-card">
+<img alt="Gallery 3" class="w-full h-full object-cover" data-alt="A cinematic capture of stage lights emitting a soft, ethereal white and lavender glow through a light haze. The light beams are gentle rather than harsh, creating a spiritual atmosphere that feels bright and hopeful. This abstract representation of 'The Light' perfectly fits the ethereal radiance theme of the VESPER conference." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSxFtC5Nmz8dd2U3KZiSbDONdrffBXLFm35NaQChUOoy-KNM1Dh-HzvVeDfLNkN9qKCbn2J8u6fd0tB4cQ98hlHTOYgC0yU_unnWP81gLPiMjwOwd2GIpyF7NBIG37T5_7u-cvJDEdTe4U_WbSkLymh0fubUlOzc8n2GFB3XztuUG1cJ3xnq4-hdLcOLatlQFFmsqTYlfQl9B48T7IytDjV5GsFHxuFOHYMARzlF3p6U7Mk-j_l0l4WgjGnE7RnSGX04MtgD-XSFez"/>
+</div>
+<div class="flex-shrink-0 w-80 h-[500px] rounded-xl overflow-hidden glass-card">
+<img alt="Gallery 4" class="w-full h-full object-cover" data-alt="An artistic shot of people's hands raised in worship, softly illuminated by warm, ethereal light from above. The background is a blur of soft lavender and airy white tones, creating a peaceful and spiritual mood. The focus is on the human connection and the collective spiritual experience, rendered in a luminous, light-mode visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ1jOEr16FVFhMLUBKCup0iLJuenlvevXLQQ0Cwg1mCsQRNQysqEwzPaWaySHw2g0g7VNG8NaWEK-5BTqGZ-WB1ZxDAnfhcePQF5zleQJ5afcIglmyNUwdUZvWad0DIPo7T2z20Er6Zt5eqIBUwmwrWhRX0IQsNpsK1gyhC2jAFOJxMIwD14xO7rK66eoL35Pp1r73uQdjAqm-nBpU8I9-C9vc7N2ZpHpOpRvPkko7Fk5Ptmk2aEaA-pKoi16JW_noEMDIMVyQ_VY7"/>
+</div>
+</div>
+</section>
+<!-- Registration CTA Section -->
+<section class="py-section-gap relative">
+<div class="absolute inset-0 aura-glow z-0"></div>
+<div class="px-margin-page max-w-container-max mx-auto relative z-10">
+<div class="glass-card p-16 md:p-24 rounded-3xl text-center max-w-4xl mx-auto overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 blur-[100px] -ml-32 -mb-32"></div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Step Into The Light</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">
+                    Limited early access passes available. Secure your place in this luminous night of community and worship.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<div class="flex-1 max-w-xs mx-auto md:mx-0">
+<label class="block text-left font-label-sm text-primary uppercase mb-2 ml-4">Email Address</label>
+<input class="w-full bg-white/50 border-b-2 border-primary/20 focus:border-primary outline-none py-4 px-6 rounded-t-xl transition-all font-body-md text-on-surface" placeholder="hello@example.com" type="email"/>
+</div>
+<button class="bg-primary text-white px-12 py-5 rounded-full font-label-sm uppercase tracking-widest self-end hover:bg-primary-container transition-colors shadow-lg shadow-primary/30">Join the Waitlist</button>
+</div>
+<p class="mt-8 font-label-sm text-on-surface-variant opacity-60">Already have a ticket? <a class="text-primary underline" href="#">Sign in here</a></p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-surface-variant py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-page max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md tracking-widest font-bold text-on-surface mb-6">VESPER</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+                    An annual gathering dedicated to exploring the intersection of creative excellence and spiritual devotion.
+                </p>
+</div>
+<div>
+<h5 class="font-label-sm text-primary uppercase tracking-widest mb-6">Navigation</h5>
+<ul class="space-y-4 font-body-sm text-body-sm">
+<li><a class="text-primary font-bold" href="#">Experience</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Speakers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Schedule</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Registration</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-sm text-primary uppercase tracking-widest mb-6">Legal</h5>
+<ul class="space-y-4 font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-sm text-primary uppercase tracking-widest mb-6">Connect</h5>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary/20" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary/20" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary/20" href="#">
+<span class="material-symbols-outlined" data-icon="podcasts" data-weight="fill" style="font-variation-settings: 'FILL' 1;">podcasts</span>
+</a>
+</div>
+</div>
+</div>
+<div class="px-margin-page max-w-container-max mx-auto mt-20 pt-8 border-t border-primary/5 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-60">© 2024 VESPER. All rights reserved.</p>
+</div>
+</footer>
+</body></html>
