@@ -1,0 +1,21 @@
+# System files
+.DS_Store
+*.DS_Store
+
+# HEIC poster originals (too large)
+*.heic
+*.HEIC
+
+# Large video files (host separately)
+*.mp4
+*.mov
+
+# Draft files
+index-draft.html
+
+# Design source files (not needed for the website)
+Google Stitch/
+google Stitch Website Design 2/
+
+# Claude config
+.claude/
