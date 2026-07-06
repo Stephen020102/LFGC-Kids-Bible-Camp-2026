@@ -120,10 +120,8 @@ a:hover{opacity:.8;}
 .nav__inner{max-width:var(--container-max);margin:0 auto;height:80px;padding:0 var(--margin-page);
   display:flex;align-items:center;justify-content:space-between;gap:32px;}
 .nav__brand{display:flex;align-items:center;gap:14px;text-decoration:none;}
-.nav__mark{width:36px;height:36px;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;
-  box-shadow:0 6px 20px rgba(144,77,0,.30);color:#fff;font-family:var(--font-display);
-  font-weight:800;font-size:14px;letter-spacing:0.04em;}
+.nav__mark{width:40px;height:40px;border-radius:10px;object-fit:cover;display:block;
+  box-shadow:0 6px 20px rgba(144,77,0,.20);background:transparent;}
 .nav__wordmark{font-family:var(--font-display);font-weight:800;font-size:18px;
   letter-spacing:0.22em;color:var(--primary);line-height:1;}
 .nav__wordmark small{display:block;font-family:'Noto Sans KR',var(--font-sans);font-weight:600;
@@ -564,7 +562,7 @@ function Nav({ onRegister }) {
     <nav className="nav">
       <div className="nav__inner">
         <a href="#top" className="nav__brand">
-          <span className="nav__mark">L</span>
+          <img className="nav__mark" src="./lfgc-logo.png" alt="LFGC" />
           <span className="nav__wordmark">LFGC<small>Kids Bible Camp</small></span>
         </a>
         <div className="nav__links">
@@ -693,29 +691,35 @@ function About() {
 }
 
 const SCHEDULE_DATA = [
-  { day:'DAY 01', dateNum:'21', dateMo:'JULY', label:'도착 · Arrival', rows:[
-    { time:'14:00', tag:'WELCOME', title:'체크인 · Camp Check-in', desc:'오크우드 캠프장 도착, 짐 정리 및 첫 인사.', icon:'flag' },
-    { time:'16:30', tag:'OPENING', title:'오프닝 예배 · Opening Worship', desc:'4일의 여정을 함께 여는 첫 찬양과 기도.', icon:'church', pinned:true },
-    { time:'18:30', tag:'DINNER', title:'저녁 식사 · Dinner', desc:'캠프장 식당에서 모두 함께.', icon:'restaurant' },
-    { time:'20:00', tag:'GAMES', title:'아이스브레이커 게임 · Team Games', desc:'서로의 이름을 외우며 마음을 여는 시간.', icon:'sports_kabaddi' },
+  { day:'DAY 01', dateNum:'21', dateMo:'JULY', label:'시작 · Start', rows:[
+    { time:'10:30', tag:'DEPARTURE', title:'교회 출발 · Departure', desc:'오전 9:30 교회 본당 집결 후 오크우드로 함께 출발.', icon:'directions_bus' },
+    { time:'13:30', tag:'OPENING', title:'개회예배 · Opening Worship', desc:'4일의 여정을 여는 첫 찬양과 기도.', icon:'church', pinned:true },
+    { time:'14:30', tag:'WELCOME', title:'방 배정 · 조별 모임 · 오리엔테이션', desc:'첫 만남, 규칙 안내, 4일간 함께할 조와 인사.', icon:'groups' },
+    { time:'19:30', tag:'MESSAGE', title:'말씀 · 함께하신 여호와', desc:'"가데스에서 세렛까지" — 신명기 2:10–15.', icon:'menu_book', pinned:true },
+    { time:'21:00', tag:'SHARING', title:'조별 나눔 · Small Group', desc:'오늘 받은 말씀을 조별로 나누는 시간.', icon:'forum' },
   ]},
-  { day:'DAY 02', dateNum:'22', dateMo:'JULY', label:'벽 · The Wall', rows:[
-    { time:'07:30', tag:'MORNING', title:'아침 묵상 · Morning Devotion', desc:'하루를 여는 짧은 말씀과 기도.', icon:'light_mode' },
-    { time:'10:00', tag:'SESSION', title:'말씀 ① · 우리 앞의 벽', desc:'요한복음 3장 — 니고데모의 막힌 마음.', icon:'menu_book', pinned:true },
-    { time:'14:00', tag:'WORKSHOP', title:'워크샵 · Craft & Play', desc:'학년별 만들기, 야외 게임, 자유시간.', icon:'palette' },
-    { time:'19:30', tag:'EVENING', title:'저녁 예배 · Evening Worship', desc:'촛불 가운데 부르는 찬양.', icon:'auto_awesome' },
+  { day:'DAY 02', dateNum:'22', dateMo:'JULY', label:'구원 · Saved', rows:[
+    { time:'09:00', tag:'MORNING', title:'브레인 서바이벌 · Brain Survival', desc:'요절 암송과 성경 퀴즈로 여는 아침.', icon:'psychology' },
+    { time:'10:00', tag:'SESSION 1', title:'예배 & 공과 ① · 구원으로 체인지 업', desc:'고린도후서 5:17 · 여리고 마을.', icon:'church', pinned:true },
+    { time:'14:30', tag:'SESSION 2', title:'예배 & 공과 ② · 전도로 체인지 업', desc:'마가복음 16:15 · 갈릴리 마을.', icon:'menu_book', pinned:true },
+    { time:'15:00', tag:'OLYMPIC', title:'야외 엑티비티 올림픽 · Team Games', desc:'조별 대항으로 겨루는 캠프 올림픽.', icon:'sports_kabaddi' },
+    { time:'19:30', tag:'MESSAGE', title:'말씀 · 미스바의 기적', desc:'"에벤에셀의 기념비" — 사무엘상 7:1–14.', icon:'auto_awesome', pinned:true },
+    { time:'21:00', tag:'COMMUNION', title:'성찬식 · Holy Communion', desc:'"참된 양식, 참된 음료" — 고린도전서 11:23–29.', icon:'local_cafe', pinned:true },
   ]},
-  { day:'DAY 03', dateNum:'23', dateMo:'JULY', label:'돌파 · Breakthrough', rows:[
-    { time:'07:30', tag:'MORNING', title:'아침 묵상 · Morning Devotion', desc:'오늘의 말씀과 함께 시작합니다.', icon:'light_mode' },
-    { time:'10:00', tag:'SESSION', title:'말씀 ② · 사랑이 통과할 때', desc:'요한복음 3:16 — 하나님의 돌파.', icon:'menu_book', pinned:true },
-    { time:'13:30', tag:'OUTDOOR', title:'야외 활동 · Forest Adventure', desc:'오크우드 숲에서 팀별 미션.', icon:'forest' },
-    { time:'20:00', tag:'CAMPFIRE', title:'캠프파이어 · Campfire Night', desc:'나눔과 간증, 별빛 아래의 찬양.', icon:'local_fire_department', pinned:true },
+  { day:'DAY 03', dateNum:'23', dateMo:'JULY', label:'성장 · Growing', rows:[
+    { time:'09:00', tag:'MORNING', title:'브레인 서바이벌 · Brain Survival', desc:'요절 암송과 성경 퀴즈로 여는 아침.', icon:'psychology' },
+    { time:'10:00', tag:'SESSION 3', title:'예배 & 공과 ③ · 성장으로 체인지 업', desc:'빌립보서 2:4 · 어드벤쳐 빌리지.', icon:'church', pinned:true },
+    { time:'13:30', tag:'OUTREACH', title:'노방전도 연습 · Street Evangelism', desc:'배운 것을 나눌 준비, 조별 연습.', icon:'campaign' },
+    { time:'14:30', tag:'WATERPARK', title:'워터팍 · Waterpark', desc:'캠프의 하이라이트, 물놀이와 자유시간.', icon:'pool' },
+    { time:'19:30', tag:'MESSAGE', title:'말씀 · 블레셋의 도전을 물리치라', desc:'역대상 14:8–17.', icon:'menu_book', pinned:true },
+    { time:'21:00', tag:'CAMPFIRE', title:'캠프파이어 · 십자가의 예수님', desc:'결단의 시간 — 기도의 불, 죄사함의 용서, 성령의 새 사람, 거룩과 성화.', icon:'local_fire_department', pinned:true },
   ]},
-  { day:'DAY 04', dateNum:'24', dateMo:'JULY', label:'빛 · Sent', rows:[
-    { time:'08:00', tag:'MORNING', title:'아침 식사 · Breakfast', desc:'함께하는 마지막 식사.', icon:'restaurant' },
-    { time:'10:00', tag:'CLOSING', title:'말씀 ③ · 빛 가운데로', desc:'돌파한 마음으로 다시 일상으로.', icon:'wb_sunny', pinned:true },
-    { time:'12:00', tag:'COMMISSION', title:'파송 예배 · Sending Worship', desc:'부모님과 함께 드리는 마지막 예배.', icon:'flight_takeoff' },
-    { time:'14:00', tag:'FAREWELL', title:'귀가 · Pickup', desc:'안전한 귀가, 다시 만나요.', icon:'waving_hand' },
+  { day:'DAY 04', dateNum:'24', dateMo:'JULY', label:'파송 · Sent', rows:[
+    { time:'09:00', tag:'MORNING', title:'브레인 서바이벌 · Brain Survival', desc:'마지막 아침, 요절 총정리.', icon:'psychology' },
+    { time:'10:00', tag:'CLOSING', title:'폐회예배 · Closing Worship', desc:'"우리가 기억해야 할 이름, 예수 그리스도."', icon:'wb_sunny', pinned:true },
+    { time:'11:30', tag:'AWARDS', title:'시상식 · Awards', desc:'4일간의 여정을 축하하며.', icon:'emoji_events', pinned:true },
+    { time:'13:30', tag:'MEMORY', title:'단체사진 & 정리정돈', desc:'함께 남기는 마지막 기억.', icon:'photo_camera' },
+    { time:'15:00', tag:'FAREWELL', title:'귀가 · Pickup', desc:'안전한 귀가, 다시 만나요.', icon:'waving_hand' },
   ]},
 ];
 
@@ -1090,7 +1094,7 @@ function Footer() {
         <div className="footer__grid">
           <div>
             <div className="footer__brand-mark">
-              <span className="nav__mark">L</span>
+              <img className="nav__mark" src="./lfgc-logo.png" alt="LFGC" />
               <span className="footer__brand-name">LFGC KIDS</span>
             </div>
             <p className="footer__about">
