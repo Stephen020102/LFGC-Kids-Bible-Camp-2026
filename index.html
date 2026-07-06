@@ -132,7 +132,14 @@ a:hover{opacity:.8;}
   transition:color var(--dur) var(--ease),opacity var(--dur) var(--ease);}
 .nav__link:hover{color:var(--primary);opacity:.85;}
 .nav__link.is-active{color:var(--primary);}
-.nav__cta{padding:12px 28px;}
+.nav__cta{padding:12px 28px;background:linear-gradient(135deg,#FF5A5F,#E63946)!important;color:#fff!important;
+  box-shadow:0 6px 22px rgba(230,57,70,.45),0 0 0 2px rgba(255,90,95,.18)!important;
+  animation:nav-cta-pulse 2.4s ease-in-out infinite;font-weight:800;}
+.nav__cta:hover{opacity:1!important;transform:translateY(-1px);}
+@keyframes nav-cta-pulse{
+  0%,100%{box-shadow:0 6px 22px rgba(230,57,70,.45),0 0 0 2px rgba(255,90,95,.18);}
+  50%{box-shadow:0 8px 30px rgba(230,57,70,.6),0 0 0 5px rgba(255,90,95,.22);}
+}
 
 /* Hero */
 .hero{position:relative;min-height:100vh;padding-top:120px;padding-bottom:80px;
@@ -380,7 +387,8 @@ a:hover{opacity:.8;}
 .register__card{position:relative;padding:88px 80px;background:rgba(255,255,255,.7);
   backdrop-filter:blur(36px);-webkit-backdrop-filter:blur(36px);
   border:1px solid rgba(255,255,255,.55);border-radius:var(--radius-xl);
-  box-shadow:0 30px 80px rgba(144,77,0,.25);overflow:hidden;text-align:center;}
+  box-shadow:0 30px 80px rgba(144,77,0,.25);overflow:hidden;text-align:left;}
+.register__card .section__lead{margin-left:0;margin-right:0;max-width:520px;}
 .register__card::before,.register__card::after{content:'';position:absolute;
   width:320px;height:320px;border-radius:50%;filter:blur(80px);pointer-events:none;}
 .register__card::before{background:rgba(144,77,0,.18);top:-120px;right:-100px;}
@@ -399,7 +407,7 @@ a:hover{opacity:.8;}
   color:var(--on-primary-fixed);}
 .register__price-label{font-family:'Noto Sans KR',var(--font-sans);font-size:13px;font-weight:600;
   color:var(--on-primary-fixed-variant);}
-.register__ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.register__ctas{display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap;margin-top:8px;}
 .register__deadline{margin-top:28px;font-family:'Noto Sans KR',var(--font-sans);
   font-size:13px;color:var(--on-surface-variant);}
 .register__deadline b{color:var(--primary);font-weight:700;}
@@ -539,7 +547,7 @@ const { useState, useEffect } = React;
 function Nav({ onRegister }) {
   const [active, setActive] = useState('top');
   useEffect(() => {
-    const ids = ['top','about','schedule','video','gallery','register'];
+    const ids = ['top','about','video','gallery','register'];
     const onScroll = () => {
       let cur = 'top';
       for (const id of ids) {
@@ -567,7 +575,6 @@ function Nav({ onRegister }) {
         </a>
         <div className="nav__links">
           {link('about','ABOUT','캠프 소개')}
-          {link('schedule','SCHEDULE','일정')}
           {link('video','VIDEO','영상')}
           {link('gallery','GALLERY','사진')}
         </div>
@@ -613,10 +620,6 @@ function Hero({ onRegister }) {
             </div>
           </div>
           <div className="hero__ctas">
-            <button className="btn btn-primary" onClick={onRegister}>
-              등록하기 · Register
-              <span className="material-symbols-outlined">arrow_forward</span>
-            </button>
             <a className="btn btn-glass" href="#video">
               <span className="material-symbols-outlined">play_circle</span>
               2025 영상 보기
@@ -647,30 +650,23 @@ function Hero({ onRegister }) {
 
 function About() {
   const pillars = [
-    { en:'WORSHIP', ko:'예배', icon:'church', desc:'함께 부르는 찬양과 말씀으로 하루를 시작합니다.' },
-    { en:'BIBLE', ko:'말씀', icon:'menu_book', desc:'연령별 소그룹으로 요한복음을 깊이 묵상해요.' },
-    { en:'PLAY', ko:'올림픽', icon:'sports_kabaddi', desc:'오크우드의 숲과 들에서 마음껏 뛰노는 시간.' },
-    { en:'CRAFT', ko:'공과', icon:'palette', desc:'주제 «체인지 업»을 손으로 표현하는 워크샵.' },
+    { en:'WORSHIP', ko:'예배', icon:'church' },
+    { en:'BIBLE', ko:'말씀', icon:'menu_book' },
+    { en:'PLAY', ko:'올림픽', icon:'sports_kabaddi' },
+    { en:'CRAFT', ko:'공과', icon:'palette' },
+    { en:'WATER PLAY', ko:'물놀이', icon:'pool' },
+    { en:'CAMPFIRE', ko:'캠프파이어', icon:'local_fire_department' },
   ];
   return (
     <section className="section about" id="about">
       <div className="section__inner">
-        <div style={{ maxWidth: 760, margin: '0 auto' }}>
+        <div style={{ maxWidth: 760 }}>
           <div className="section__kicker">
             <span className="section__kicker-bar" />
             <span className="section__kicker-text">ABOUT · 캠프 소개</span>
           </div>
           <h2 className="section__title-en">A Summer to<br/>Change Up.</h2>
           <div className="section__title-ko">한 여름,{'\n'}아이들이 새로워지는 시간.</div>
-          <p style={{ marginTop:28 }}>
-            2026 LFGC 키즈 바이블 캠프는 «체인지 업 — Change Up»을 주제로,
-            고린도후서 5:17의 말씀처럼 그리스도 안에서 새로운 피조물로
-            변화되는 여정을 함께 나눕니다.
-          </p>
-          <p>
-            초등 1–6학년 어린이들이 4일 동안 예배·말씀·놀이·공과 안에서
-            하나님과, 친구들과, 자기 자신과 더 가까워지는 여정을 떠납니다.
-          </p>
           <div className="about__pillars" style={{ marginTop:36 }}>
             {pillars.map(p => (
               <div className="pillar" key={p.en}>
@@ -679,90 +675,10 @@ function About() {
                 </div>
                 <div>
                   <div className="pillar__title"><small>{p.en}</small>{p.ko}</div>
-                  <div className="pillar__desc">{p.desc}</div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const SCHEDULE_DATA = [
-  { day:'DAY 01', dateNum:'21', dateMo:'JULY', label:'시작 · Start', rows:[
-    { time:'10:30', tag:'DEPARTURE', title:'교회 출발 · Departure', desc:'오전 9:30 교회 본당 집결 후 오크우드로 함께 출발.', icon:'directions_bus' },
-    { time:'13:30', tag:'OPENING', title:'개회예배 · Opening Worship', desc:'4일의 여정을 여는 첫 찬양과 기도.', icon:'church', pinned:true },
-    { time:'14:30', tag:'WELCOME', title:'방 배정 · 조별 모임 · 오리엔테이션', desc:'첫 만남, 규칙 안내, 4일간 함께할 조와 인사.', icon:'groups' },
-    { time:'19:30', tag:'MESSAGE', title:'말씀 · 함께하신 여호와', desc:'"가데스에서 세렛까지" — 신명기 2:10–15.', icon:'menu_book', pinned:true },
-    { time:'21:00', tag:'SHARING', title:'조별 나눔 · Small Group', desc:'오늘 받은 말씀을 조별로 나누는 시간.', icon:'forum' },
-  ]},
-  { day:'DAY 02', dateNum:'22', dateMo:'JULY', label:'구원 · Saved', rows:[
-    { time:'09:00', tag:'MORNING', title:'브레인 서바이벌 · Brain Survival', desc:'요절 암송과 성경 퀴즈로 여는 아침.', icon:'psychology' },
-    { time:'10:00', tag:'SESSION 1', title:'예배 & 공과 ① · 구원으로 체인지 업', desc:'고린도후서 5:17 · 여리고 마을.', icon:'church', pinned:true },
-    { time:'14:30', tag:'SESSION 2', title:'예배 & 공과 ② · 전도로 체인지 업', desc:'마가복음 16:15 · 갈릴리 마을.', icon:'menu_book', pinned:true },
-    { time:'15:00', tag:'OLYMPIC', title:'야외 엑티비티 올림픽 · Team Games', desc:'조별 대항으로 겨루는 캠프 올림픽.', icon:'sports_kabaddi' },
-    { time:'19:30', tag:'MESSAGE', title:'말씀 · 미스바의 기적', desc:'"에벤에셀의 기념비" — 사무엘상 7:1–14.', icon:'auto_awesome', pinned:true },
-    { time:'21:00', tag:'COMMUNION', title:'성찬식 · Holy Communion', desc:'"참된 양식, 참된 음료" — 고린도전서 11:23–29.', icon:'local_cafe', pinned:true },
-  ]},
-  { day:'DAY 03', dateNum:'23', dateMo:'JULY', label:'성장 · Growing', rows:[
-    { time:'09:00', tag:'MORNING', title:'브레인 서바이벌 · Brain Survival', desc:'요절 암송과 성경 퀴즈로 여는 아침.', icon:'psychology' },
-    { time:'10:00', tag:'SESSION 3', title:'예배 & 공과 ③ · 성장으로 체인지 업', desc:'빌립보서 2:4 · 어드벤쳐 빌리지.', icon:'church', pinned:true },
-    { time:'13:30', tag:'OUTREACH', title:'노방전도 연습 · Street Evangelism', desc:'배운 것을 나눌 준비, 조별 연습.', icon:'campaign' },
-    { time:'14:30', tag:'WATERPARK', title:'워터팍 · Waterpark', desc:'캠프의 하이라이트, 물놀이와 자유시간.', icon:'pool' },
-    { time:'19:30', tag:'MESSAGE', title:'말씀 · 블레셋의 도전을 물리치라', desc:'역대상 14:8–17.', icon:'menu_book', pinned:true },
-    { time:'21:00', tag:'CAMPFIRE', title:'캠프파이어 · 십자가의 예수님', desc:'결단의 시간 — 기도의 불, 죄사함의 용서, 성령의 새 사람, 거룩과 성화.', icon:'local_fire_department', pinned:true },
-  ]},
-  { day:'DAY 04', dateNum:'24', dateMo:'JULY', label:'파송 · Sent', rows:[
-    { time:'09:00', tag:'MORNING', title:'브레인 서바이벌 · Brain Survival', desc:'마지막 아침, 요절 총정리.', icon:'psychology' },
-    { time:'10:00', tag:'CLOSING', title:'폐회예배 · Closing Worship', desc:'"우리가 기억해야 할 이름, 예수 그리스도."', icon:'wb_sunny', pinned:true },
-    { time:'11:30', tag:'AWARDS', title:'시상식 · Awards', desc:'4일간의 여정을 축하하며.', icon:'emoji_events', pinned:true },
-    { time:'13:30', tag:'MEMORY', title:'단체사진 & 정리정돈', desc:'함께 남기는 마지막 기억.', icon:'photo_camera' },
-    { time:'15:00', tag:'FAREWELL', title:'귀가 · Pickup', desc:'안전한 귀가, 다시 만나요.', icon:'waving_hand' },
-  ]},
-];
-
-function Schedule() {
-  const [day, setDay] = useState(2);
-  const data = SCHEDULE_DATA[day];
-  return (
-    <section className="section schedule" id="schedule">
-      <div className="section__inner">
-        <div className="section__head section__head--center">
-          <div className="section__kicker" style={{ justifyContent:'center' }}>
-            <span className="section__kicker-bar" />
-            <span className="section__kicker-text">SCHEDULE · 일정</span>
-          </div>
-          <h2 className="section__title-en">4 Days, One Change Up.</h2>
-          <div className="section__title-ko">3박 4일, 새로운 피조물로.</div>
-          <p className="section__lead">
-            매일 아침 묵상부터 저녁 예배까지 — 요일을 눌러 각 날의 흐름을 살펴보세요.
-          </p>
-        </div>
-        <div className="schedule__tabs">
-          {SCHEDULE_DATA.map((d, i) => (
-            <button key={d.day} className={`schedule__tab ${i === day ? 'is-on' : ''}`} onClick={() => setDay(i)}>
-              <div className="schedule__tab-day">{d.day} · {d.dateMo}</div>
-              <div className="schedule__tab-date">{d.dateNum}</div>
-              <div className="schedule__tab-label">{d.label}</div>
-            </button>
-          ))}
-        </div>
-        <div className="schedule__list">
-          {data.rows.map((r, i) => (
-            <div key={i} className={`schedule__row ${r.pinned ? 'is-pinned' : ''}`}>
-              <div className="schedule__time">{r.time}</div>
-              <div className="schedule__body">
-                <div className="schedule__title"><small>{r.tag}</small>{r.title}</div>
-                <div className="schedule__desc">{r.desc}</div>
-              </div>
-              <span className="material-symbols-outlined schedule__icon"
-                style={r.pinned ? { fontVariationSettings:"'FILL' 1" } : undefined}>
-                {r.icon}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -1061,10 +977,13 @@ function RegisterCTA({ onRegister }) {
       <div className="register__aura" />
       <div className="register__inner">
         <div className="register__card">
-          <div className="register__kicker">REGISTRATION OPEN{'\n'}등록 접수 중</div>
-          <h2 className="register__title">Step Into<br/>The Change Up.</h2>
-          <div className="register__title-ko">아이의 여름,{'\n'}가장 빛나는 4일.</div>
-          <p className="register__lead">
+          <div className="section__kicker">
+            <span className="section__kicker-bar" />
+            <span className="section__kicker-text">REGISTRATION OPEN · 등록 접수 중</span>
+          </div>
+          <h2 className="section__title-en">Step Into<br/>The Change Up.</h2>
+          <div className="section__title-ko">아이의 여름, 가장 빛나는 4일.</div>
+          <p className="section__lead">
             2026년 LFGC 키즈 바이블 캠프 등록은 온라인으로 진행됩니다.
             정원이 한정되어 있으니 서둘러 신청해 주세요.
           </p>
@@ -1073,10 +992,6 @@ function RegisterCTA({ onRegister }) {
               지금 등록하기
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
-            <a className="btn btn-glass" href="mailto:camp@lfgc.org">
-              <span className="material-symbols-outlined">mail</span>
-              문의하기 · Contact
-            </a>
           </div>
           <div className="register__deadline">
             등록 마감 <b>18 July 2026</b>
@@ -1146,7 +1061,6 @@ function App() {
       <Nav onRegister={onRegister} />
       <Hero onRegister={onRegister} />
       <About />
-      <Schedule />
       <VideoSection />
       <Gallery />
       <RegisterCTA onRegister={onRegister} />
