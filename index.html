@@ -383,12 +383,13 @@ a:hover{opacity:.8;}
 .register{position:relative;padding-block:var(--section-gap);background:var(--surface);overflow:hidden;}
 .register__aura{position:absolute;inset:0;z-index:0;
   background:radial-gradient(circle at center,rgba(144,77,0,.18) 0%,transparent 65%);}
-.register__inner{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 var(--margin-page);}
-.register__card{position:relative;padding:88px 80px;background:rgba(255,255,255,.7);
+.register__inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 24px;}
+.register__card{position:relative;padding:72px 56px;background:rgba(255,255,255,.7);
   backdrop-filter:blur(36px);-webkit-backdrop-filter:blur(36px);
   border:1px solid rgba(255,255,255,.55);border-radius:var(--radius-xl);
-  box-shadow:0 30px 80px rgba(144,77,0,.25);overflow:hidden;text-align:left;}
-.register__card .section__lead{margin-left:0;margin-right:0;max-width:520px;}
+  box-shadow:0 30px 80px rgba(144,77,0,.25);overflow:hidden;text-align:center;}
+.register__card .section__kicker{justify-content:center;}
+.register__card .section__lead{margin-left:auto;margin-right:auto;max-width:640px;}
 .register__card::before,.register__card::after{content:'';position:absolute;
   width:320px;height:320px;border-radius:50%;filter:blur(80px);pointer-events:none;}
 .register__card::before{background:rgba(144,77,0,.18);top:-120px;right:-100px;}
@@ -407,7 +408,7 @@ a:hover{opacity:.8;}
   color:var(--on-primary-fixed);}
 .register__price-label{font-family:'Noto Sans KR',var(--font-sans);font-size:13px;font-weight:600;
   color:var(--on-primary-fixed-variant);}
-.register__ctas{display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap;margin-top:8px;}
+.register__ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
 .register__deadline{margin-top:28px;font-family:'Noto Sans KR',var(--font-sans);
   font-size:13px;color:var(--on-surface-variant);}
 .register__deadline b{color:var(--primary);font-weight:700;}
@@ -455,6 +456,8 @@ a:hover{opacity:.8;}
   .video__en{font-size:48px;}
   .nav__links{display:none;}
   .footer__grid{grid-template-columns:1fr;}
+  .register__inner{padding:0 16px;}
+  .register__card{padding:48px 28px;}
 
   /* 1. Nav: 키즈 바이블 캠프 1줄로 */
   .nav__wordmark small{white-space:nowrap;font-size:10px;}
@@ -570,7 +573,7 @@ function Nav({ onRegister }) {
     <nav className="nav">
       <div className="nav__inner">
         <a href="#top" className="nav__brand">
-          <img className="nav__mark" src="./lfgc-logo.png" alt="LFGC" />
+          <img className="nav__mark" src="./assets/lfgc-logo.png" alt="LFGC" />
           <span className="nav__wordmark">LFGC<small>Kids Bible Camp</small></span>
         </a>
         <div className="nav__links">
@@ -1009,7 +1012,7 @@ function Footer() {
         <div className="footer__grid">
           <div>
             <div className="footer__brand-mark">
-              <img className="nav__mark" src="./lfgc-logo.png" alt="LFGC" />
+              <img className="nav__mark" src="./assets/lfgc-logo.png" alt="LFGC" />
               <span className="footer__brand-name">LFGC KIDS</span>
             </div>
             <p className="footer__about">
